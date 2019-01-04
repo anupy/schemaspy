@@ -1,4 +1,4 @@
-# schemaspy
+### schemaspy generate relation design and database information in 5 stpes or within 10-20 minutes ###
 Schemaspy for Postgresql
 
 
