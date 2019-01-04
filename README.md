@@ -1,4 +1,4 @@
-# schemaspy
+### Schemaspy generate relation design and database information in 5 stpes or within 10-20 minutes ###
 Schemaspy for Postgresql
 
 
@@ -18,7 +18,7 @@ Currently SchemaSpy has released 6.0.0 version and this is awesome.
 
 So what basically you will need to : 
 
-Step 1 :
+## Step 1 : ##
 
 `apt-get install graphviz`
 
@@ -31,7 +31,7 @@ If you get error
 
 then `apt install graphviz`
 
-Step 2 :
+##  Step 2 :  ##
 
 Install java, I used ubuntu so I've used below link to install JAVA.
 
@@ -39,16 +39,16 @@ https://thishosting.rocks/install-java-ubuntu/
 
 I've used only `apt-get install default-jdk`
 
-Step 3 : 
+##  Step 3 :  ## 
 
 Download latest version of Schema Spy at http://schemaspy.org/
 
-Step 4 : 
+##  Step 4 :  ## 
   
   Set password to your database.
   Now find appropriate JRE i.e. `postgresql-9.4.1212.jre6` and download. here https://jdbc.postgresql.org/download.html
     
-Final Step : 
+##  Final Step : ##
 
 Use command to generate schema related information : 
 
