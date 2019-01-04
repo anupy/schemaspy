@@ -58,4 +58,10 @@ Now you'll beatiful output from it.
 
 To have example or ready things I've connected my VERY OLD and STOPPED projects database and useful jar, jre files for you guys. 
 
+So if you want to generate in your machine simply follow 5 steps and git clone this repository and use above command, but make sure
+database is exists with relational table then it will give you joy.
+
+I kept `postgresql-941212jre6.jar` and `schemaspy-6.0.0.jar` both jar files in repository, but if your database is different then
+instead of postgresql jar you need to find appropriate database jar file.
+
 I hope you people will like this. 
