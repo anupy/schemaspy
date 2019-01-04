@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>order_master - imast Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>imast</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+			<li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>order_master</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<div class="row">
+					<div id="button_group_one" class="col-md-3 col-sm-6"></div>
+					<div id="button_group_two" class="col-md-2 col-sm-4 pull-right text-right"></div>
+				</div>
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="order">order</span></td>
+				 <td>serial</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title='Automatically updated by the database'>√</td>
+				 <td>nextval(&#39;order_master_order_id_seq&#39;::regclass)</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="dispatch_details.order_id references order_master.order via dispatch_details_order_id_94ddeb7e_fk_order_master_order">
+						<a href='dispatch_details.html'>dispatch_details</a><span class='relatedKey'>.order_id</span>
+					</td>
+					<td class="constraint detail">
+						dispatch_details_order_id_94ddeb7e_fk_order_master_order <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="order_details.order_id references order_master.order via order_details_order_id_9401d97b_fk_order_master_order_id">
+						<a href='order_details.html'>order_details</a><span class='relatedKey'>.order_id</span>
+					</td>
+					<td class="constraint detail">
+						order_details_order_id_9401d97b_fk_order_master_order_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="order_marked">order_marked</span></td>
+				 <td>timestamptz</td>
+				 <td>35,6</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="order_saved">order_saved</span></td>
+				 <td>timestamptz</td>
+				 <td>35,6</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="edit_marked">edit_marked</span></td>
+				 <td>timestamptz</td>
+				 <td>35,6</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="edit_saved">edit_saved</span></td>
+				 <td>timestamptz</td>
+				 <td>35,6</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="order_status">order_status</span></td>
+				 <td>bool</td>
+				 <td>1</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="status_reason">status_reason</span></td>
+				 <td>text</td>
+				 <td>2147483647</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="order_added_date">order_added_date</span></td>
+				 <td>timestamptz</td>
+				 <td>35,6</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="order_updated_date">order_updated_date</span></td>
+				 <td>timestamptz</td>
+				 <td>35,6</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="beat_check_id">beat_check_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="order_master.beat_check_id references beat_check_master.id via order_master_beat_check_id_f58e01fa_fk_beat_check_master_id">
+						<a href='beat_check_master.html'>beat_check_master</a><span class='relatedKey'>.id</span>
+					</td>
+					<td class="constraint detail">
+						order_master_beat_check_id_f58e01fa_fk_beat_check_master_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="client_id">client_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="order_master.client_id references client_master.client_id via order_master_client_id_2af705be_fk_client_master_client_id">
+						<a href='client_master.html'>client_master</a><span class='relatedKey'>.client_id</span>
+					</td>
+					<td class="constraint detail">
+						order_master_client_id_2af705be_fk_client_master_client_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="order_editor_client_employee_id">order_editor_client_employee_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="order_master.order_editor_client_employee_id references client_employee_master.client_employee_id via D0641e0afe16700a39755cafd478cb35">
+						<a href='client_employee_master.html'>client_employee_master</a><span class='relatedKey'>.client_employee_id</span>
+					</td>
+					<td class="constraint detail">
+						D0641e0afe16700a39755cafd478cb35 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="target_customer_id">target_customer_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="order_master.target_customer_id references customer_master.customer_id via orde_target_customer_id_8cf823f0_fk_customer_master_customer_id">
+						<a href='customer_master.html'>customer_master</a><span class='relatedKey'>.customer_id</span>
+					</td>
+					<td class="constraint detail">
+						orde_target_customer_id_8cf823f0_fk_customer_master_customer_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="order_dispatch_status">order_dispatch_status</span></td>
+				 <td>varchar</td>
+				 <td>60</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="adhoc">adhoc</span></td>
+				 <td>bool</td>
+				 <td>1</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="invoice_number">invoice_number</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='16 columns'>Table contained <span id="recordNumber">47</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> order_master_pkey</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>order</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>order_master_2bfe9d72</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>client_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>order_master_5e94619a</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>beat_check_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>order_master_923a4f08</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>order_editor_client_employee_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>order_master_97315b9d</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>target_customer_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>order_master_invoice_number_311327b9_like</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>invoice_number</td>
+				 </tr>				 
+				 <tr>
+				  <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> order_master_invoice_number_311327b9_uniq</td>
+				  <td>Must be unique</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>invoice_number</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="beat_check_master.html" title="beat_check_master" alt="" coords="1303,303,1529,567">
+<area shape="rect" id="node2" href="customer_master.html" title="customer_master" alt="" coords="900,609,1259,1137">
+<area shape="rect" id="node3" href="client_employee_master.html" title="client_employee_master" alt="" coords="335,633,856,1191">
+<area shape="rect" id="node4" href="client_master.html" title="client_master" alt="" coords="24,527,291,791">
+<area shape="rect" id="node5" href="dispatch_details.html" title="dispatch_details" alt="" coords="2085,5,2329,181">
+<area shape="rect" id="node6" href="order_master.html" title="order_master" alt="" coords="1573,128,2039,667">
+<area shape="rect" id="node7" href="order_details.html" title="order_details" alt="" coords="2083,199,2331,375">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/order_master.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="authapi_otp.html" title="authapi_otp" alt="" coords="2609,1948,2773,2036">
+<area shape="rect" id="node2" href="client_employee_master.html" title="client_employee_master" alt="" coords="1895,1208,2416,1765">
+<area shape="rect" id="node6" href="customer_master.html" title="customer_master" alt="" coords="1492,1824,1851,2352">
+<area shape="rect" id="node11" href="client_master.html" title="client_master" alt="" coords="859,2405,1125,2669">
+<area shape="rect" id="node14" href="city_master.html" title="city_master" alt="" coords="449,2015,611,2103">
+<area shape="rect" id="node15" href="district_master.html" title="district_master" alt="" coords="220,1944,405,2032">
+<area shape="rect" id="node16" href="state_master.html" title="state_master" alt="" coords="5,1944,176,2032">
+<area shape="rect" id="node21" href="firm_type.html" title="firm_type" alt="" coords="1235,1839,1382,1927">
+<area shape="rect" id="node22" href="client_employee_location.html" title="client_employee_location" alt="" coords="1543,1235,1800,1323">
+<area shape="rect" id="node23" href="pin_master.html" title="pin_master" alt="" coords="655,1803,815,1891">
+<area shape="rect" id="node24" href="designations.html" title="designations" alt="" coords="1586,1376,1757,1464">
+<area shape="rect" id="node3" href="authtoken_token.html" title="authtoken_token" alt="" coords="2593,2053,2790,2141">
+<area shape="rect" id="node4" href="beat_check_master.html" title="beat_check_master" alt="" coords="2967,1369,3193,1633">
+<area shape="rect" id="node5" href="beat_master.html" title="beat_master" alt="" coords="2608,2336,2775,2424">
+<area shape="rect" id="node7" href="beat_schedule.html" title="beat_schedule" alt="" coords="2065,201,2246,289">
+<area shape="rect" id="node8" href="territory_master.html" title="territory_master" alt="" coords="1575,1719,1768,1807">
+<area shape="rect" id="node10" href="beat_type.html" title="beat_type" alt="" coords="1597,2369,1746,2457">
+<area shape="rect" id="node12" href="client_vertical_segment_mapping.html" title="client_vertical_segment_mapping" alt="" coords="1514,844,1829,932">
+<area shape="rect" id="node36" href="customer_type.html" title="customer_type" alt="" coords="1216,2232,1401,2320">
+<area shape="rect" id="node62" href="territory_level_master.html" title="territory_level_master" alt="" coords="1192,1661,1425,1749">
+<area shape="rect" id="node9" href="beat_details.html" title="beat_details" alt="" coords="2997,2556,3163,2644">
+<area shape="rect" id="node13" href="beat_schedule_client_employee.html" title="beat_schedule_client_employee" alt="" coords="2540,121,2843,209">
+<area shape="rect" id="node17" href="client_app_setting.html" title="client_app_setting" alt="" coords="1204,2445,1413,2533">
+<area shape="rect" id="node18" href="client_contacts.html" title="client_contacts" alt="" coords="1215,2551,1402,2639">
+<area shape="rect" id="node19" href="client_employee_attachments.html" title="client_employee_attachments" alt="" coords="2547,2159,2835,2247">
+<area shape="rect" id="node20" href="client_employee_client_vertical_segment_mapping.html" title="client_employee_client_vertical_segment_mapping" alt="" coords="2473,332,2909,420">
+<area shape="rect" id="node25" href="client_employee_master_groups.html" title="client_employee_master_groups" alt="" coords="2537,789,2845,877">
+<area shape="rect" id="node26" href="client_employee_master_reporting_employees.html" title="client_employee_master_reporting_employees" alt="" coords="2489,895,2894,983">
+<area shape="rect" id="node27" href="client_employee_master_user_permissions.html" title="client_employee_master_user_permissions" alt="" coords="2500,1000,2883,1088">
+<area shape="rect" id="node28" href="client_employee_permissions_mapping.html" title="client_employee_permissions_mapping" alt="" coords="2513,1105,2870,1193">
+<area shape="rect" id="node29" href="client_employee_reporting.html" title="client_employee_reporting" alt="" coords="2558,1211,2825,1299">
+<area shape="rect" id="node30" href="client_employee_role_mapping.html" title="client_employee_role_mapping" alt="" coords="2543,1316,2840,1404">
+<area shape="rect" id="node31" href="client_employee_territory_mapping.html" title="client_employee_territory_mapping" alt="" coords="2527,543,2855,631">
+<area shape="rect" id="node32" href="client_vertical_segment_mapping_customer.html" title="client_vertical_segment_mapping_customer" alt="" coords="1961,844,2350,932">
+<area shape="rect" id="node33" href="client_vertical_segment_mapping_employee.html" title="client_vertical_segment_mapping_employee" alt="" coords="2497,227,2886,315">
+<area shape="rect" id="node34" href="crm_childrenmaster.html" title="crm_childrenmaster" alt="" coords="2581,1421,2802,1509">
+<area shape="rect" id="node35" href="customer_attachments.html" title="customer_attachments" alt="" coords="2035,2228,2276,2316">
+<area shape="rect" id="node37" href="customer_master_reporting_to.html" title="customer_master_reporting_to" alt="" coords="2007,2333,2304,2421">
+<area shape="rect" id="node38" href="cvs_customer_territory_mapping.html" title="cvs_customer_territory_mapping" alt="" coords="1999,949,2312,1037">
+<area shape="rect" id="node39" href="cvs_customer_territory_mapping_employees.html" title="cvs_customer_territory_mapping_employees" alt="" coords="2493,648,2889,736">
+<area shape="rect" id="node40" href="dispatch_details.html" title="dispatch_details" alt="" coords="3749,2724,3993,2900">
+<area shape="rect" id="node41" href="order_master.html" title="order_master" alt="" coords="3237,2457,3703,2996">
+<area shape="rect" id="node42" href="product_master.html" title="product_master" alt="" coords="2059,3013,2251,3101">
+<area shape="rect" id="node57" href="product_category.html" title="product_category" alt="" coords="1569,3185,1774,3273">
+<area shape="rect" id="node43" href="django_admin_log.html" title="django_admin_log" alt="" coords="2587,1527,2796,1615">
+<area shape="rect" id="node44" href="employee_attendance.html" title="employee_attendance" alt="" coords="2575,1632,2808,1720">
+<area shape="rect" id="node45" href="employee_leave_app.html" title="employee_leave_app" alt="" coords="2579,437,2804,525">
+<area shape="rect" id="node46" href="leave_types.html" title="leave_types" alt="" coords="1590,949,1753,1037">
+<area shape="rect" id="node47" href="employee_relative.html" title="employee_relative" alt="" coords="2588,1737,2795,1825">
+<area shape="rect" id="node48" href="lmt_codes.html" title="lmt_codes" alt="" coords="1232,2869,1385,2957">
+<area shape="rect" id="node49" href="lmt_couponcode.html" title="lmt_couponcode" alt="" coords="2981,2661,3179,2749">
+<area shape="rect" id="node50" href="lmt_couponcodetype.html" title="lmt_couponcodetype" alt="" coords="2577,2529,2805,2617">
+<area shape="rect" id="node51" href="lmt_scheme.html" title="lmt_scheme" alt="" coords="1589,2511,1754,2599">
+<area shape="rect" id="node52" href="lmt_schemepointtypemaster.html" title="lmt_schemepointtypemaster" alt="" coords="1169,2656,1448,2744">
+<area shape="rect" id="node53" href="lmt_territoryassignment.html" title="lmt_territoryassignment" alt="" coords="2031,2035,2280,2123">
+<area shape="rect" id="node54" href="lmt_uidconfigmaster.html" title="lmt_uidconfigmaster" alt="" coords="2043,2692,2268,2780">
+<area shape="rect" id="node55" href="lmt_uiddefinition.html" title="lmt_uiddefinition" alt="" coords="1209,2975,1408,3063">
+<area shape="rect" id="node56" href="lmt_uidgeneration.html" title="lmt_uidgeneration" alt="" coords="2587,2860,2795,2948">
+<area shape="rect" id="node58" href="order_details.html" title="order_details" alt="" coords="3747,2377,3995,2553">
+<area shape="rect" id="node59" href="sale_client_entry.html" title="sale_client_entry" alt="" coords="2592,3193,2791,3281">
+<area shape="rect" id="node60" href="sale_entry.html" title="sale_entry" alt="" coords="2607,2707,2775,2795">
+<area shape="rect" id="node61" href="territory_client_vertical_segment_mapping_employees.html" title="territory_client_vertical_segment_mapping_employees" alt="" coords="2460,1843,2923,1931">
+<area shape="rect" id="node63" href="trident_preregistration.html" title="trident_preregistration" alt="" coords="2572,3325,2811,3413">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/order_master.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+<!-- SheetJS -->
+<script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+<!-- pdfmake -->
+<script src="../bower/pdfmake/pdfmake.min.js"></script>
+<script src="../bower/pdfmake/vfs_fonts.js"></script>
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

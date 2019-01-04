@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>cvs_customer_territory_mapping - imast Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>imast</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+			<li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>cvs_customer_territory_mapping</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<div class="row">
+					<div id="button_group_one" class="col-md-3 col-sm-6"></div>
+					<div id="button_group_two" class="col-md-2 col-sm-4 pull-right text-right"></div>
+				</div>
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id">id</span></td>
+				 <td>serial</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title='Automatically updated by the database'>√</td>
+				 <td>nextval(&#39;cvs_customer_territory_mapping_id_seq&#39;::regclass)</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="cvs_customer_territory_mapping_employees.cvscustomerterritorymapping_id references cvs_customer_territory_mapping.id via f4b8a5797bb7834c012e384c602757f8">
+						<a href='cvs_customer_territory_mapping_employees.html'>cvs_customer_territory_mapping_employees</a><span class='relatedKey'>.cvscustomerterritorymapping_id</span>
+					</td>
+					<td class="constraint detail">
+						f4b8a5797bb7834c012e384c602757f8 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="cvs_customer_territory_mapping_products.cvscustomerterritorymapping_id references cvs_customer_territory_mapping.id via a95bdaa805a82664816687e75fe46881">
+						<a href='cvs_customer_territory_mapping_products.html'>cvs_customer_territory_mapping_products</a><span class='relatedKey'>.cvscustomerterritorymapping_id</span>
+					</td>
+					<td class="constraint detail">
+						a95bdaa805a82664816687e75fe46881 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="customer_id">customer_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="cvs_customer_territory_mapping.customer_id references customer_master.customer_id via cvs_custome_customer_id_d722a6c2_fk_customer_master_customer_id">
+						<a href='customer_master.html'>customer_master</a><span class='relatedKey'>.customer_id</span>
+					</td>
+					<td class="constraint detail">
+						cvs_custome_customer_id_d722a6c2_fk_customer_master_customer_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="cvs_id">cvs_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="cvs_customer_territory_mapping.cvs_id references client_vertical_segment_mapping.client_vertical_segment_id via d7c3cd4c50e63d66d4d0a80c8702eff0">
+						<a href='client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span class='relatedKey'>.client_vertical_segment_id</span>
+					</td>
+					<td class="constraint detail">
+						d7c3cd4c50e63d66d4d0a80c8702eff0 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="territory_id">territory_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="cvs_customer_territory_mapping.territory_id references territory_master.territory_id via cvs_cust_territory_id_759eb52b_fk_territory_master_territory_id">
+						<a href='territory_master.html'>territory_master</a><span class='relatedKey'>.territory_id</span>
+					</td>
+					<td class="constraint detail">
+						cvs_cust_territory_id_759eb52b_fk_territory_master_territory_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='4 columns'>Table contained <span id="recordNumber">644</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> cvs_customer_territory_mapping_pkey</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>cvs_customer_territory_mapping_5ead0d37</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>cvs_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>cvs_customer_territory_mapping_cb24373b</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>customer_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>cvs_customer_territory_mapping_d1b5a6ce</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>territory_id</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="cvs_customer_territory_mapping.html" title="cvs_customer_territory_mapping" alt="" coords="408,489,821,676">
+<area shape="rect" id="node2" href="customer_master.html" title="customer_master" alt="" coords="5,5,364,533">
+<area shape="rect" id="node3" href="client_vertical_segment_mapping.html" title="client_vertical_segment_mapping" alt="" coords="11,551,359,756">
+<area shape="rect" id="node4" href="territory_master.html" title="territory_master" alt="" coords="56,773,313,949">
+<area shape="rect" id="node5" href="cvs_customer_territory_mapping_employees.html" title="cvs_customer_territory_mapping_employees" alt="" coords="865,377,1312,529">
+<area shape="rect" id="node6" href="cvs_customer_territory_mapping_products.html" title="cvs_customer_territory_mapping_products" alt="" coords="874,547,1303,699">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/cvs_customer_territory_mapping.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="beat_check_master.html" title="beat_check_master" alt="" coords="2705,1061,2921,1149">
+<area shape="rect" id="node2" href="beat_master.html" title="beat_master" alt="" coords="2355,1732,2521,1820">
+<area shape="rect" id="node3" href="customer_master.html" title="customer_master" alt="" coords="1355,197,1713,725">
+<area shape="rect" id="node4" href="client_employee_master.html" title="client_employee_master" alt="" coords="1839,611,2089,699">
+<area shape="rect" id="node5" href="beat_schedule.html" title="beat_schedule" alt="" coords="1873,2156,2055,2244">
+<area shape="rect" id="node6" href="territory_master.html" title="territory_master" alt="" coords="1405,1243,1663,1419">
+<area shape="rect" id="node8" href="client_master.html" title="client_master" alt="" coords="859,1125,1033,1213">
+<area shape="rect" id="node9" href="client_vertical_segment_mapping.html" title="client_vertical_segment_mapping" alt="" coords="1360,2104,1708,2309">
+<area shape="rect" id="node10" href="city_master.html" title="city_master" alt="" coords="449,756,611,844">
+<area shape="rect" id="node11" href="district_master.html" title="district_master" alt="" coords="220,837,405,925">
+<area shape="rect" id="node12" href="state_master.html" title="state_master" alt="" coords="5,756,176,844">
+<area shape="rect" id="node14" href="firm_type.html" title="firm_type" alt="" coords="1121,496,1267,584">
+<area shape="rect" id="node15" href="pin_master.html" title="pin_master" alt="" coords="655,959,815,1047">
+<area shape="rect" id="node26" href="customer_type.html" title="customer_type" alt="" coords="1101,637,1287,725">
+<area shape="rect" id="node36" href="territory_level_master.html" title="territory_level_master" alt="" coords="1077,1281,1311,1369">
+<area shape="rect" id="node7" href="beat_details.html" title="beat_details" alt="" coords="2731,1659,2896,1747">
+<area shape="rect" id="node17" href="segment_master.html" title="segment_master" alt="" coords="1095,2140,1293,2228">
+<area shape="rect" id="node18" href="vertical_master.html" title="vertical_master" alt="" coords="1100,2245,1288,2333">
+<area shape="rect" id="node13" href="client_employee_client_vertical_segment_mapping.html" title="client_employee_client_vertical_segment_mapping" alt="" coords="2220,1591,2656,1679">
+<area shape="rect" id="node16" href="client_employee_territory_mapping.html" title="client_employee_territory_mapping" alt="" coords="2274,1064,2602,1152">
+<area shape="rect" id="node19" href="client_vertical_segment_mapping_category.html" title="client_vertical_segment_mapping_category" alt="" coords="1772,2261,2156,2349">
+<area shape="rect" id="node20" href="client_vertical_segment_mapping_customer.html" title="client_vertical_segment_mapping_customer" alt="" coords="1769,716,2159,804">
+<area shape="rect" id="node21" href="client_vertical_segment_mapping_employee.html" title="client_vertical_segment_mapping_employee" alt="" coords="2243,1900,2633,1988">
+<area shape="rect" id="node22" href="client_vertical_segment_mapping_products.html" title="client_vertical_segment_mapping_products" alt="" coords="2245,2219,2631,2307">
+<area shape="rect" id="node23" href="product_master.html" title="product_master" alt="" coords="1868,1943,2060,2031">
+<area shape="rect" id="node24" href="customer_attachments.html" title="customer_attachments" alt="" coords="1843,207,2085,295">
+<area shape="rect" id="node25" href="customer_employee_territory_mapping.html" title="customer_employee_territory_mapping" alt="" coords="1786,1245,2142,1333">
+<area shape="rect" id="node27" href="customer_master_reporting_to.html" title="customer_master_reporting_to" alt="" coords="1815,312,2113,400">
+<area shape="rect" id="node28" href="cvs_customer_territory_mapping.html" title="cvs_customer_territory_mapping" alt="" coords="1757,1492,2171,1679">
+<area shape="rect" id="node29" href="cvs_customer_territory_mapping_employees.html" title="cvs_customer_territory_mapping_employees" alt="" coords="2215,1248,2661,1400">
+<area shape="rect" id="node30" href="cvs_customer_territory_mapping_products.html" title="cvs_customer_territory_mapping_products" alt="" coords="2223,1421,2653,1573">
+<area shape="rect" id="node31" href="lmt_territoryassignment.html" title="lmt_territoryassignment" alt="" coords="1839,505,2089,593">
+<area shape="rect" id="node32" href="order_master.html" title="order_master" alt="" coords="2965,909,3140,997">
+<area shape="rect" id="node33" href="sale_client_entry.html" title="sale_client_entry" alt="" coords="2339,505,2537,593">
+<area shape="rect" id="node34" href="sale_entry.html" title="sale_entry" alt="" coords="2354,611,2522,699">
+<area shape="rect" id="node35" href="territory_client_vertical_segment_mapping.html" title="territory_client_vertical_segment_mapping" alt="" coords="1774,1837,2154,1925">
+<area shape="rect" id="node37" href="territory_master_child_territories.html" title="territory_master_child_territories" alt="" coords="1807,1351,2121,1439">
+<area shape="rect" id="node38" href="territory_master_cities.html" title="territory_master_cities" alt="" coords="1845,857,2083,945">
+<area shape="rect" id="node39" href="territory_master_districts.html" title="territory_master_districts" alt="" coords="1835,963,2093,1051">
+<area shape="rect" id="node40" href="territory_master_pins.html" title="territory_master_pins" alt="" coords="1848,1104,2080,1192">
+<area shape="rect" id="node41" href="territory_master_states.html" title="territory_master_states" alt="" coords="1842,1732,2086,1820">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/cvs_customer_territory_mapping.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+<!-- SheetJS -->
+<script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+<!-- pdfmake -->
+<script src="../bower/pdfmake/pdfmake.min.js"></script>
+<script src="../bower/pdfmake/vfs_fonts.js"></script>
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

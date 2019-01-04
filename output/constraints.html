@@ -1,0 +1,4942 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>imast Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="bower/html5shiv/html5shiv.min.js"></script>
+  <script src="bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand"><b>imast</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+			<li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+			<li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>Constraints</h1>
+      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <i class="ion ion-key"></i>
+              <h3 class="box-title">216 Foreign Key Constraints</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="constraint_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Constraint Name</th>
+				  <th>Child Column</th>
+				  <th>Parent Column</th>				  
+				  <th>Delete Rule</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td>client_master_client_pin_id_50c932e4_fk_pin_master_pin_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/pin_master.html'>pin_master</a><span>.pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_master_client_city_id_37b4c462_fk_city_master_city_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_master_client_state_id_a856e54c_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D0bda896a07f290329982d2dc89a4f8e</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.creator_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_master_client_district_id_38d1aa9d_fk_district_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_district_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/district_master.html'>district_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>events_meta_schedule_id_de7fa10e_fk_beat_schedule_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/events_meta.html'>events_meta</a><span>.schedule_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_schedule.html'>beat_schedule</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>te_territorymaster_id_8af232e4_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master_states.html'>territory_master_states</a><span>.territorymaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>territory_mast_statemaster_id_83319b35_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master_states.html'>territory_master_states</a><span>.statemaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_couponcode_segment_id_2146e6ef_fk_segment_master_segment_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcodetype.html'>lmt_couponcodetype</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/segment_master.html'>segment_master</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_couponcodetyp_client_id_2072081f_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcodetype.html'>lmt_couponcodetype</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_couponc_vertical_id_2236f352_fk_vertical_master_vertical_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcodetype.html'>lmt_couponcodetype</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/vertical_master.html'>vertical_master</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D6a558c002a3731fa8246ee8939878f8</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcodetype.html'>lmt_couponcodetype</a><span>.created_by_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D2734d4311fa0e004c17dec3e60857b0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcodetype.html'>lmt_couponcodetype</a><span>.updated_by_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>territory_level_m_client_id_ed57f434_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_level_master.html'>territory_level_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_app_settin_client_id_404513bf_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_app_setting.html'>client_app_setting</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>bea47a3c3eaf56b3f4d8a70080beffa8</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/employee_attendance.html'>employee_attendance</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>events_meta_beat_beatmaster_id_bfb699b8_fk_beat_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/events_meta_beat.html'>events_meta_beat</a><span>.beatmaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_master.html'>beat_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>events_meta_beat_eventsmeta_id_18be5342_fk_events_meta_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/events_meta_beat.html'>events_meta_beat</a><span>.eventsmeta_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/events_meta.html'>events_meta</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>a_user_id_35299eff_fk_client_employee_master_client_employee_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/authtoken_token.html'>authtoken_token</a><span>.user_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D68ebd75b79cdec8003ffbe4b2329e5b</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/employee_relative.html'>employee_relative</a><span>.related_to_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>product_ima_product_id_id_ccaefabd_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_images.html'>product_images</a><span>.product_id_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>ac6b8d02c62484fb3ea3164c68546d37</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/trident_preregistration.html'>trident_preregistration</a><span>.approved_by_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>trident_preregistrat_district_id_300ceb76_fk_district_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/trident_preregistration.html'>trident_preregistration</a><span>.district_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/district_master.html'>district_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>trident_preregistration_city_id_34c54f4f_fk_city_master_city_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/trident_preregistration.html'>trident_preregistration</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>trident_preregist_client_id_61b07dba_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/trident_preregistration.html'>trident_preregistration</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>trident_preregistrat_state_id_83f0bc27_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/trident_preregistration.html'>trident_preregistration</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D1f0d37be39a9fbe7b7e3e73745bf3e0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_client_vertical_segment_mapping.html'>territory_client_vertical_segment_mapping</a><span>.cvs_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.client_vertical_segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>territor_territory_id_eeb4a6e9_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_client_vertical_segment_mapping.html'>territory_client_vertical_segment_mapping</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>employee_leave_app_leave_type_id_f8b311e8_fk_leave_types_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/employee_leave_app.html'>employee_leave_app</a><span>.leave_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/leave_types.html'>leave_types</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D9358ab1e64b2ca9d0a9e4b61d73e3df</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/employee_leave_app.html'>employee_leave_app</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>customer_territory_id_a8aadbfd_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_employee_territory_mapping.html'>customer_employee_territory_mapping</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>order_details_product_id_a3b1bac1_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/order_details.html'>order_details</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>order_details_order_id_9401d97b_fk_order_master_order_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/order_details.html'>order_details</a><span>.order_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/order_master.html'>order_master</a><span>.order</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>from_customermaster_id_2d0197f8_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master_reporting_to.html'>customer_master_reporting_to</a><span>.from_customermaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>cu_to_customermaster_id_642620fb_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master_reporting_to.html'>customer_master_reporting_to</a><span>.to_customermaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>cda406660a92320342a9775f3d28645b</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_client_vertical_segment_mapping.html'>client_employee_client_vertical_segment_mapping</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>f0918c5c939ffa305ab1e2dafd9f0c41</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_client_vertical_segment_mapping.html'>client_employee_client_vertical_segment_mapping</a><span>.client_vertical_segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.client_vertical_segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>leave_types_client_id_bc3a7dc2_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/leave_types.html'>leave_types</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D2595389202860d13469d7830954ad98</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_reporting.html'>client_employee_reporting</a><span>.reporting_to_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D81a13e0c8f75102a432a395c4e6cd7b</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_reporting.html'>client_employee_reporting</a><span>.client_employee_reporting_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/reporting_type.html'>reporting_type</a><span>.reporting_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D3f3517aa7b99b3cbcdbc931671d14bf</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_reporting.html'>client_employee_reporting</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>crm_addressmaster_city_id_abaf8697_fk_city_master_city_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/crm_addressmaster.html'>crm_addressmaster</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>crm_addressmaster_state_id_69083db5_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/crm_addressmaster.html'>crm_addressmaster</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uidconfigmaster_scheme_id_4f42905d_fk_lmt_scheme_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidconfigmaster.html'>lmt_uidconfigmaster</a><span>.scheme_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_scheme.html'>lmt_scheme</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uidconfigmast_client_id_e51062d7_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidconfigmaster.html'>lmt_uidconfigmaster</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D85747f23fd8dbbc0669dae257dbcddb</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master_groups.html'>client_employee_master_groups</a><span>.clientemployeemaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_employee_master_group_group_id_a9438159_fk_auth_group_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master_groups.html'>client_employee_master_groups</a><span>.group_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/auth_group.html'>auth_group</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D7205130ed12d513dc90d99c0a443aea</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping_category.html'>client_vertical_segment_mapping_category</a><span>.clientverticalsegmentmapping_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.client_vertical_segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D969383487cf6b87e16f1dc56e49de99</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping_category.html'>client_vertical_segment_mapping_category</a><span>.productcategory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D5bc3f5a5f45d7a21a8e0b6b7fea0d68</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_master.html'>beat_master</a><span>.employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_master_client_id_01bc33a8_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_master.html'>beat_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_master_beat_type_id_4decd391_fk_beat_type_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_master.html'>beat_master</a><span>.beat_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_type.html'>beat_type</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>c11a707b355e5f99625f6e0102eb0285</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_master.html'>beat_master</a><span>.cvs_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.client_vertical_segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>dispatch_details_order_id_94ddeb7e_fk_order_master_order</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/dispatch_details.html'>dispatch_details</a><span>.order_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/order_master.html'>order_master</a><span>.order</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>dispatch_detai_product_id_fa143dd3_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/dispatch_details.html'>dispatch_details</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>orde_target_customer_id_8cf823f0_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/order_master.html'>order_master</a><span>.target_customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>order_master_beat_check_id_f58e01fa_fk_beat_check_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/order_master.html'>order_master</a><span>.beat_check_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_check_master.html'>beat_check_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>order_master_client_id_2af705be_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/order_master.html'>order_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D0641e0afe16700a39755cafd478cb35</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/order_master.html'>order_master</a><span>.order_editor_client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_detail_customer_id_f0ffc5ab_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_details.html'>beat_details</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_details_beat_id_21b93670_fk_beat_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_details.html'>beat_details</a><span>.beat_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_master.html'>beat_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_det_territory_id_c32bca7f_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_details.html'>beat_details</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_type_client_id_e0dd3004_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_type.html'>beat_type</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_employee_role_mapping_role_id_3cd08953_fk_role_role_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_role_mapping.html'>client_employee_role_mapping</a><span>.role_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/role.html'>role</a><span>.role_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D473b8553c1773c3ddbba234ca4393e7</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_role_mapping.html'>client_employee_role_mapping</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_territoryassignment_scheme_id_a3314a75_fk_lmt_scheme_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_territoryassignment.html'>lmt_territoryassignment</a><span>.scheme_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_scheme.html'>lmt_scheme</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_terr_territory_id_34ca9837_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_territoryassignment.html'>lmt_territoryassignment</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_terr_distributor_id_f30d1b7b_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_territoryassignment.html'>lmt_territoryassignment</a><span>.distributor_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_territo_retailor_id_33c76ba1_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_territoryassignment.html'>lmt_territoryassignment</a><span>.retailor_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>a95bdaa805a82664816687e75fe46881</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/cvs_customer_territory_mapping_products.html'>cvs_customer_territory_mapping_products</a><span>.cvscustomerterritorymapping_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/cvs_customer_territory_mapping.html'>cvs_customer_territory_mapping</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>cvs_cust_productmaster_id_5c7a7d5d_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/cvs_customer_territory_mapping_products.html'>cvs_customer_territory_mapping_products</a><span>.productmaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>city_master_district_id_8b34a142_fk_district_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.district_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/district_master.html'>district_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>city_master_state_id_7298a1e1_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>fc6ede20974427f5b760349f49db9173</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master_child_territories.html'>territory_master_child_territories</a><span>.from_territorymaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D31c4ac4140984c6a1aafe2a330df86a</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master_child_territories.html'>territory_master_child_territories</a><span>.to_territorymaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_codes_client_id_020b4892_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_codes.html'>lmt_codes</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_schemepointty_client_id_6d0bd16f_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_schemepointtypemaster.html'>lmt_schemepointtypemaster</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D8c4d7592d43b2822532632893065f3f</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_schedule_client_employee.html'>beat_schedule_client_employee</a><span>.clientemployeemaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_schedul_beatschedulemaster_id_b37acfbb_fk_beat_schedule_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_schedule_client_employee.html'>beat_schedule_client_employee</a><span>.beatschedulemaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_schedule.html'>beat_schedule</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D03183f795f57842ca12af0bf330c562</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master_user_permissions.html'>client_employee_master_user_permissions</a><span>.clientemployeemaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_employee_ma_permission_id_d9cb7d2f_fk_auth_permission_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master_user_permissions.html'>client_employee_master_user_permissions</a><span>.permission_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/auth_permission.html'>auth_permission</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>territory_mast_districtmaster_id_937119c6_fk_district_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master_districts.html'>territory_master_districts</a><span>.districtmaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/district_master.html'>district_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>te_territorymaster_id_07a98ea5_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master_districts.html'>territory_master_districts</a><span>.territorymaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_e_designation_id_30d41ec6_fk_designations_designation_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.designation_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/designations.html'>designations</a><span>.designation_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_communication_district_id_ef295d4c_fk_district_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.communication_district_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/district_master.html'>district_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_employee_mas_office_pin_id_b0437b5c_fk_pin_master_pin_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.office_pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/pin_master.html'>pin_master</a><span>.pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_em_communication_city_id_91254ea6_fk_city_master_city_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.communication_city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D18083af01b1c2fc79dc9990b66dadc7</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_location_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_location.html'>client_employee_location</a><span>.client_employee_location_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_employ_office_district_id_e53af161_fk_district_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.office_district_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/district_master.html'>district_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_communication_state_id_8bb19f8e_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.communication_state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_employ_office_state_id_6e99e747_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.office_state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_empl_customer_id_2abdbe12_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_employee__office_city_id_35c90d4b_fk_city_master_city_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.office_city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_employee_m_client_id_1241792e_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_emplo_communication_pin_id_8ebbf251_fk_pin_master_pin_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.communication_pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/pin_master.html'>pin_master</a><span>.pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>c871f20ae5f7c706eb4a5541a1a6d2f7</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_firm_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/firm_type.html'>firm_type</a><span>.firm_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D7c89ff395aef622992fb365f9576911</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_client_vertical_segment_mapping_employees.html'>territory_client_vertical_segment_mapping_employees</a><span>.clientemployeemaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D1c26b65306ac41c5f5185a46c9c9862</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_client_vertical_segment_mapping_employees.html'>territory_client_vertical_segment_mapping_employees</a><span>.territoryclientverticalsegmentmapping_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_client_vertical_segment_mapping.html'>territory_client_vertical_segment_mapping</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D95851009341aa460f87cf42cd2e33da</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping_products.html'>client_vertical_segment_mapping_products</a><span>.clientverticalsegmentmapping_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.client_vertical_segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_v_productmaster_id_6684f12c_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping_products.html'>client_vertical_segment_mapping_products</a><span>.productmaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D1c9a0b8ca3ce1ddf268ae46452fcf5c</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.client_employee_master_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>customer_master_office_pin_id_2a11ca97_fk_pin_master_pin_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.office_pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/pin_master.html'>pin_master</a><span>.pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>cus_customer_type_id_7315b090_fk_customer_type_customer_type_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_type.html'>customer_type</a><span>.customer_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D92f2a440d45b8b3274dd33745a2cae2</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.modified_by_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D3da5a00e281f3777029573398aa800e</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.creator_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>custom_communication_district_id_c8ffb4a9_fk_district_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.communication_district_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/district_master.html'>district_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>customer_mast_office_state_id_1e0b844f_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.office_state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>customer_master_client_id_ea32fc51_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>customer_mas_communication_pin_id_2dc1097e_fk_pin_master_pin_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.communication_pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/pin_master.html'>pin_master</a><span>.pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>custome_communication_tehsil_id_bd6f53a2_fk_city_master_city_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.communication_tehsil_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>customer_mast_office_district_id_fa4e6fe3_fk_district_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.office_district_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/district_master.html'>district_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>custom_communication_state_id_aca46863_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.communication_state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>custom_customer_firm_type_id_3646e3be_fk_firm_type_firm_type_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_firm_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/firm_type.html'>firm_type</a><span>.firm_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>customer_maste_office_tehsil_id_11c25a9e_fk_city_master_city_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.office_tehsil_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uiddefinit_segment_id_6b3fbbef_fk_segment_master_segment_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uiddefinition.html'>lmt_uiddefinition</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/segment_master.html'>segment_master</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uiddefinition_client_id_392386a1_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uiddefinition.html'>lmt_uiddefinition</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uiddefi_vertical_id_f967ba22_fk_vertical_master_vertical_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uiddefinition.html'>lmt_uiddefinition</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/vertical_master.html'>vertical_master</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uid_det_product_id_id_683db5d6_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uid_details.html'>lmt_uid_details</a><span>.product_id_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uid_details_uidcode_id_0f621f6e_fk_lmt_uidgeneration_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uid_details.html'>lmt_uid_details</a><span>.uidcode_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidgeneration.html'>lmt_uidgeneration</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D007537f71d31f63243bdc4bc42f1d15</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uid_details.html'>lmt_uid_details</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>customer_atta_parent_id_a88ca33a_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_attachments.html'>customer_attachments</a><span>.parent_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_contacts_client_id_2f6a83cf_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_contacts.html'>client_contacts</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_schedule_client_id_7fa511a0_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_schedule.html'>beat_schedule</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>e9239319375fad024a57d62f85764e3a</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_schedule.html'>beat_schedule</a><span>.cvs_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.client_vertical_segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>cvs_cust_territory_id_759eb52b_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/cvs_customer_territory_mapping.html'>cvs_customer_territory_mapping</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>cvs_custome_customer_id_d722a6c2_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/cvs_customer_territory_mapping.html'>cvs_customer_territory_mapping</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>d7c3cd4c50e63d66d4d0a80c8702eff0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/cvs_customer_territory_mapping.html'>cvs_customer_territory_mapping</a><span>.cvs_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.client_vertical_segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>product_master_client_id_9a672750_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D2167520dd698d147021b05a7f221f3d</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_check_master_beat_id_932bb023_fk_beat_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_check_master.html'>beat_check_master</a><span>.beat_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_master.html'>beat_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_check_master_schedule_id_c16d7aef_fk_beat_schedule_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_check_master.html'>beat_check_master</a><span>.schedule_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_schedule.html'>beat_schedule</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_che_territory_id_43bf27ed_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_check_master.html'>beat_check_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>de8bf05e3cf56f942433a456d291d75e</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_check_master.html'>beat_check_master</a><span>.employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>beat_check__customer_id_6b55e6eb_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/beat_check_master.html'>beat_check_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>customer_type_client_id_99148946_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_type.html'>customer_type</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D166ca19277146abb6c76c353f7739c5</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master_reporting_employees.html'>client_employee_master_reporting_employees</a><span>.from_clientemployeemaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D670e540da915d36dc043b3cf8cac8bf</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master_reporting_employees.html'>client_employee_master_reporting_employees</a><span>.to_clientemployeemaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>django_admin_content_type_id_c4bce8eb_fk_django_content_type_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/django_admin_log.html'>django_admin_log</a><span>.content_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/django_content_type.html'>django_content_type</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>d_user_id_c564eba6_fk_client_employee_master_client_employee_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/django_admin_log.html'>django_admin_log</a><span>.user_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>c83a14c850d7f77f7ffdbe1559660249</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/cvs_customer_territory_mapping_employees.html'>cvs_customer_territory_mapping_employees</a><span>.clientemployeemaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>f4b8a5797bb7834c012e384c602757f8</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/cvs_customer_territory_mapping_employees.html'>cvs_customer_territory_mapping_employees</a><span>.cvscustomerterritorymapping_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/cvs_customer_territory_mapping.html'>cvs_customer_territory_mapping</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>pin_master_city_id_f6fca438_fk_city_master_city_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/pin_master.html'>pin_master</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>pin_master_state_id_73f93c34_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/pin_master.html'>pin_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D996333aea1434727a320f2dd8df6e4a</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/pin_master.html'>pin_master</a><span>.added_by_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>pin_master_district_id_55affacd_fk_district_master_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/pin_master.html'>pin_master</a><span>.district_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/district_master.html'>district_master</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>role_role_type_f394c9e5_fk_role_types_role_types_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/role.html'>role</a><span>.role_type</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/role_types.html'>role_types</a><span>.role_types_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>role_permissions_baa03a3a_fk_permissions_permission_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/role.html'>role</a><span>.permissions</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/permissions.html'>permissions</a><span>.permission_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D1706fa87891c26b80de8c12d6279e8e</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_territory_mapping.html'>client_employee_territory_mapping</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_e_territory_id_096094c4_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_territory_mapping.html'>client_employee_territory_mapping</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_scheme_client_id_6ae003b4_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_scheme.html'>lmt_scheme</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_sche_point_type_id_fb541d6a_fk_lmt_schemepointtypemaster_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_scheme.html'>lmt_scheme</a><span>.point_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_schemepointtypemaster.html'>lmt_schemepointtypemaster</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_scheme_vertical_id_72d235c8_fk_vertical_master_vertical_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_scheme.html'>lmt_scheme</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/vertical_master.html'>vertical_master</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_customer_type_id_6054c7dd_fk_customer_type_customer_type_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_scheme.html'>lmt_scheme</a><span>.customer_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_type.html'>customer_type</a><span>.customer_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_scheme_segment_id_76e4fdcf_fk_segment_master_segment_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_scheme.html'>lmt_scheme</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/segment_master.html'>segment_master</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uidgenerat_segment_id_9e3e9c09_fk_segment_master_segment_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidgeneration.html'>lmt_uidgeneration</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/segment_master.html'>segment_master</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uidgenera_uid_type_name_id_62e7dab5_fk_lmt_uiddefinition_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidgeneration.html'>lmt_uidgeneration</a><span>.uid_type_name_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uiddefinition.html'>lmt_uiddefinition</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>cfd33fa0edd5a8d586227c2181cbe994</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidgeneration.html'>lmt_uidgeneration</a><span>.updated_by_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>fb51ef35d75910bf25cfc9ea42fb2a5b</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidgeneration.html'>lmt_uidgeneration</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uidgene_vertical_id_f2b1b8db_fk_vertical_master_vertical_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidgeneration.html'>lmt_uidgeneration</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/vertical_master.html'>vertical_master</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uidgeneration_client_id_a46c123a_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidgeneration.html'>lmt_uidgeneration</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_uidgene_product_id_id_1952add9_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidgeneration.html'>lmt_uidgeneration</a><span>.product_id_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D7a0b00c084af2609a932b77847b2a57</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_uidgeneration.html'>lmt_uidgeneration</a><span>.created_by_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_schemeprod_product_id_e7be7fc4_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_schemeproductslab.html'>lmt_schemeproductslab</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D013284a8b66977067bf39d4d040e8f3</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_schemeproductslab.html'>lmt_schemeproductslab</a><span>.product_group_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_schemeproductslab_scheme_id_2c2ba0ad_fk_lmt_scheme_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_schemeproductslab.html'>lmt_schemeproductslab</a><span>.scheme_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_scheme.html'>lmt_scheme</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>territory_master__citymaster_id_f91533e1_fk_city_master_city_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master_cities.html'>territory_master_cities</a><span>.citymaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/city_master.html'>city_master</a><span>.city_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>te_territorymaster_id_f8981f6b_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master_cities.html'>territory_master_cities</a><span>.territorymaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>e95831abc4af64046cddc2b8e53ed3e0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_attachments.html'>client_employee_attachments</a><span>.parent_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>clien_customermaster_id_299b8ad3_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping_customer.html'>client_vertical_segment_mapping_customer</a><span>.customermaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>c287fbf33f17ea331061308b4b2258dc</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping_customer.html'>client_vertical_segment_mapping_customer</a><span>.clientverticalsegmentmapping_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.client_vertical_segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_vert_vertical_id_ae726a6e_fk_vertical_master_vertical_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/vertical_master.html'>vertical_master</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_vertica_segment_id_b3456820_fk_segment_master_segment_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/segment_master.html'>segment_master</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_vertical_s_client_id_8e07c9e5_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>territory_master_client_id_80af4266_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>a72bceb25de7ff5c9d0fc8bab507ccda</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_level_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_level_master.html'>territory_level_master</a><span>.territory_level_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>b69064797b67d8e817d796b9974660cd</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_permissions_mapping.html'>client_employee_permissions_mapping</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>client_empl_permission_id_3cda0db4_fk_permissions_permission_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_permissions_mapping.html'>client_employee_permissions_mapping</a><span>.permission_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/permissions.html'>permissions</a><span>.permission_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>district_master_state_id_d2bd3d58_fk_state_master_state_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/district_master.html'>district_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/state_master.html'>state_master</a><span>.state_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D312ccb8897ea6df09bcf923f1fd62b5</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping_employee.html'>client_vertical_segment_mapping_employee</a><span>.clientemployeemaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D617ff127654b9b3045d0ab033071dbe</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping_employee.html'>client_vertical_segment_mapping_employee</a><span>.clientverticalsegmentmapping_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_vertical_segment_mapping.html'>client_vertical_segment_mapping</a><span>.client_vertical_segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_couponcode_client_id_38911ecc_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcode.html'>lmt_couponcode</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D159d637f521570680ef165d4f8dc83d</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcode.html'>lmt_couponcode</a><span>.updated_by_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_couponcode_coupon_name_id_e2eece2b_fk_lmt_couponcodetype_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcode.html'>lmt_couponcode</a><span>.coupon_name_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcodetype.html'>lmt_couponcodetype</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D26d7fa9a6e6266df994329b5809eed0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcode.html'>lmt_couponcode</a><span>.created_by_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_coupon_redeem_item_id_e0a053c5_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcode.html'>lmt_couponcode</a><span>.redeem_item_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_couponc_vertical_id_dd4d5363_fk_vertical_master_vertical_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcode.html'>lmt_couponcode</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/vertical_master.html'>vertical_master</a><span>.vertical_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_couponcode_segment_id_0d3ae28f_fk_segment_master_segment_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcode.html'>lmt_couponcode</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/segment_master.html'>segment_master</a><span>.segment_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>sale_entry_applicable_schem_scheme_id_d166fb3b_fk_lmt_scheme_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_entry_applicable_schemes.html'>sale_entry_applicable_schemes</a><span>.scheme_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_scheme.html'>lmt_scheme</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>sale_entry_applicab_saleentry_id_5375a572_fk_sale_entry_sale_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_entry_applicable_schemes.html'>sale_entry_applicable_schemes</a><span>.saleentry_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_entry.html'>sale_entry</a><span>.sale_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>auth_group_permiss_permission_id_84c5c92e_fk_auth_permission_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/auth_group_permissions.html'>auth_group_permissions</a><span>.permission_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/auth_permission.html'>auth_permission</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>auth_group_permissions_group_id_b120cbf9_fk_auth_group_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/auth_group_permissions.html'>auth_group_permissions</a><span>.group_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/auth_group.html'>auth_group</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>sal_sold_to_customer_id_0e0113ed_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_client_entry.html'>sale_client_entry</a><span>.sold_to_customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>da081714383362c5db727e8700b3a15a</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_client_entry.html'>sale_client_entry</a><span>.product_category_three_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>sale_client_en_product_id_5a5995bd_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_client_entry.html'>sale_client_entry</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D5788b77505dfda0f0ab5f662c4fbbeb</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_client_entry.html'>sale_client_entry</a><span>.product_category_base_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>df65dd026adde383f0f69266dab9c788</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_client_entry.html'>sale_client_entry</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>sale_client_entry_client_id_649daaf1_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_client_entry.html'>sale_client_entry</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D1d8b0d36fc6cb0d61131aecd7b17859</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_client_entry.html'>sale_client_entry</a><span>.product_category_one_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>sa_sold_to_consignee_id_861a231f_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_client_entry.html'>sale_client_entry</a><span>.sold_to_consignee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D86d84e8126b4048199578ce0435086f</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_client_entry.html'>sale_client_entry</a><span>.product_category_two_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>product_category_client_id_0b09f37d_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>e0f02afdae89e52f04cb36f2851916cf</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.superior_product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_category.html'>product_category</a><span>.product_category_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>te_territorymaster_id_6bcb7f31_fk_territory_master_territory_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master_pins.html'>territory_master_pins</a><span>.territorymaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master.html'>territory_master</a><span>.territory_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>territory_master_pin_pinmaster_id_d5737e31_fk_pin_master_pin_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_master_pins.html'>territory_master_pins</a><span>.pinmaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/pin_master.html'>pin_master</a><span>.pin_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>a_user_id_19bb8f15_fk_client_employee_master_client_employee_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/authapi_otp.html'>authapi_otp</a><span>.user_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_couponcode_product_id_1b513fb3_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcode_details.html'>lmt_couponcode_details</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>lmt_couponcode_deta_couponcode_id_7f21102b_fk_lmt_couponcode_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcode_details.html'>lmt_couponcode_details</a><span>.couponcode_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/lmt_couponcode.html'>lmt_couponcode</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>customer_emplo_product_id_02367d80_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_employee_product_mapping.html'>customer_employee_product_mapping</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>b06eb24d5e5953a49b201b1ed5110a11</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/crm_childrenmaster.html'>crm_childrenmaster</a><span>.parent_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>auth_permiss_content_type_id_2f476e4b_fk_django_content_type_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/auth_permission.html'>auth_permission</a><span>.content_type_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/django_content_type.html'>django_content_type</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D80564f40b71e25bf88fc7ee86ed5740</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_client_vertical_segment_mapping_products.html'>territory_client_vertical_segment_mapping_products</a><span>.territoryclientverticalsegmentmapping_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_client_vertical_segment_mapping.html'>territory_client_vertical_segment_mapping</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>territor_productmaster_id_3bf58b51_fk_product_master_product_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/territory_client_vertical_segment_mapping_products.html'>territory_client_vertical_segment_mapping_products</a><span>.productmaster_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/product_master.html'>product_master</a><span>.product_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>sale_entry_customer_id_a20f8f96_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_entry.html'>sale_entry</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>D90921faef02818fa4117183b76f8238</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_entry.html'>sale_entry</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_employee_master.html'>client_employee_master</a><span>.client_employee_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>sale_parent_customer_id_24666849_fk_customer_master_customer_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_entry.html'>sale_entry</a><span>.parent_customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/customer_master.html'>customer_master</a><span>.customer_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>sale_entry_client_id_07d973fa_fk_client_master_client_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/sale_entry.html'>sale_entry</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/client_master.html'>client_master</a><span>.client_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+								</tbody>
+				</table>				
+			</div>
+		</div>	
+		<div class="box box-primary">
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+              <h3 class="box-title">Check Constraints</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="constraint_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+					<tr>
+				  		<th>Table</th>
+				  		<th>Constraint Name</th>
+				  		<th>Constraint</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+				  		<td colspan="3">None detected</td>
+					</tr>
+				</tbody>
+				</table>				
+			</div>
+		</div>			
+      </section>
+	  <script>
+	      var config = {
+		      pagination: true
+	      }
+	  </script>    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+<!-- SheetJS -->
+<script src="bower/js-xlsx/xlsx.full.min.js"></script>
+<!-- pdfmake -->
+<script src="bower/pdfmake/pdfmake.min.js"></script>
+<script src="bower/pdfmake/vfs_fonts.js"></script>
+<!-- SlimScroll -->
+<script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="bower/codemirror/codemirror.js"></script>
+<script src="bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="bower/admin-lte/dist/js/app.min.js"></script>
+<script src="constraint.js"></script>
+<script src="schemaSpy.js"></script>
+</body>
+</html>

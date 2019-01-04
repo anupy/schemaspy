@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>imast Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="bower/html5shiv/html5shiv.min.js"></script>
+  <script src="bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand"><b>imast</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+			<li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+			<li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>All Relationships</h1>
+      </section>
+      <!-- Main content -->
+      <section class="content">
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+              <h3 class="box-title">Diagrams</h3>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>			  			 
+			  			              <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+																					<map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/auth_group.html" title="auth_group" alt="" coords="2331,2732,2492,2855">
+<area shape="rect" id="node2" href="tables/auth_group_permissions.html" title="auth_group_permissions" alt="" coords="2851,2637,3119,2789">
+<area shape="rect" id="node3" href="tables/auth_permission.html" title="auth_permission" alt="" coords="2313,2309,2510,2485">
+<area shape="rect" id="node47" href="tables/django_content_type.html" title="django_content_type" alt="" coords="1785,2548,2021,2700">
+<area shape="rect" id="node4" href="tables/authapi_otp.html" title="authapi_otp" alt="" coords="2897,6721,3074,6868">
+<area shape="rect" id="node18" href="tables/client_employee_master.html" title="client_employee_master" alt="" coords="2151,6089,2672,6647">
+<area shape="rect" id="node5" href="tables/authtoken_token.html" title="authtoken_token" alt="" coords="2885,5732,3086,5879">
+<area shape="rect" id="node6" href="tables/beat_check_master.html" title="beat_check_master" alt="" coords="3349,3977,3576,4241">
+<area shape="rect" id="node8" href="tables/beat_master.html" title="beat_master" alt="" coords="2898,2349,3073,2584">
+<area shape="rect" id="node9" href="tables/beat_schedule.html" title="beat_schedule" alt="" coords="2281,2539,2542,2715">
+<area shape="rect" id="node37" href="tables/customer_master.html" title="customer_master" alt="" coords="1724,5204,2083,5732">
+<area shape="rect" id="node86" href="tables/territory_master.html" title="territory_master" alt="" coords="1775,3587,2032,3763">
+<area shape="rect" id="node7" href="tables/beat_details.html" title="beat_details" alt="" coords="3357,3755,3569,3960">
+<area shape="rect" id="node11" href="tables/beat_type.html" title="beat_type" alt="" coords="1424,2053,1575,2200">
+<area shape="rect" id="node26" href="tables/client_master.html" title="client_master" alt="" coords="1032,3545,1299,3809">
+<area shape="rect" id="node27" href="tables/client_vertical_segment_mapping.html" title="client_vertical_segment_mapping" alt="" coords="1729,2868,2077,3073">
+<area shape="rect" id="node10" href="tables/beat_schedule_client_employee.html" title="beat_schedule_client_employee" alt="" coords="2819,3169,3151,3321">
+<area shape="rect" id="node12" href="tables/city_master.html" title="city_master" alt="" coords="505,5884,719,6060">
+<area shape="rect" id="node45" href="tables/district_master.html" title="district_master" alt="" coords="276,5799,461,5945">
+<area shape="rect" id="node81" href="tables/state_master.html" title="state_master" alt="" coords="5,5943,232,6060">
+<area shape="rect" id="node13" href="tables/client_app_setting.html" title="client_app_setting" alt="" coords="1376,3516,1623,3663">
+<area shape="rect" id="node14" href="tables/client_contacts.html" title="client_contacts" alt="" coords="1343,3680,1656,3827">
+<area shape="rect" id="node15" href="tables/client_employee_attachments.html" title="client_employee_attachments" alt="" coords="2766,5896,3205,6043">
+<area shape="rect" id="node16" href="tables/client_employee_client_vertical_segment_mapping.html" title="client_employee_client_vertical_segment_mapping" alt="" coords="2734,3825,3237,3977">
+<area shape="rect" id="node17" href="tables/client_employee_location.html" title="client_employee_location" alt="" coords="1700,6104,2107,6221">
+<area shape="rect" id="node43" href="tables/designations.html" title="designations" alt="" coords="1760,6275,2047,6392">
+<area shape="rect" id="node53" href="tables/firm_type.html" title="firm_type" alt="" coords="1367,5681,1632,5799">
+<area shape="rect" id="node70" href="tables/pin_master.html" title="pin_master" alt="" coords="771,5495,980,5729">
+<area shape="rect" id="node19" href="tables/client_employee_master_groups.html" title="client_employee_master_groups" alt="" coords="2817,3339,3154,3491">
+<area shape="rect" id="node20" href="tables/client_employee_master_reporting_employees.html" title="client_employee_master_reporting_employees" alt="" coords="2753,6060,3217,6212">
+<area shape="rect" id="node21" href="tables/client_employee_master_user_permissions.html" title="client_employee_master_user_permissions" alt="" coords="2770,2807,3201,2959">
+<area shape="rect" id="node22" href="tables/client_employee_permissions_mapping.html" title="client_employee_permissions_mapping" alt="" coords="2786,7225,3185,7377">
+<area shape="rect" id="node69" href="tables/permissions.html" title="permissions" alt="" coords="1817,7353,1990,7471">
+<area shape="rect" id="node23" href="tables/client_employee_reporting.html" title="client_employee_reporting" alt="" coords="2805,5389,3166,5571">
+<area shape="rect" id="node74" href="tables/reporting_type.html" title="reporting_type" alt="" coords="2255,5785,2568,5903">
+<area shape="rect" id="node24" href="tables/client_employee_role_mapping.html" title="client_employee_role_mapping" alt="" coords="2823,7395,3147,7547">
+<area shape="rect" id="node75" href="tables/role.html" title="role" alt="" coords="2333,7441,2490,7617">
+<area shape="rect" id="node25" href="tables/client_employee_territory_mapping.html" title="client_employee_territory_mapping" alt="" coords="2802,4709,3169,4861">
+<area shape="rect" id="node80" href="tables/segment_master.html" title="segment_master" alt="" coords="1368,2529,1631,2647">
+<area shape="rect" id="node93" href="tables/vertical_master.html" title="vertical_master" alt="" coords="1373,3127,1626,3244">
+<area shape="rect" id="node28" href="tables/client_vertical_segment_mapping_category.html" title="client_vertical_segment_mapping_category" alt="" coords="2193,1924,2629,2076">
+<area shape="rect" id="node71" href="tables/product_category.html" title="product_category" alt="" coords="1733,659,2073,835">
+<area shape="rect" id="node29" href="tables/client_vertical_segment_mapping_customer.html" title="client_vertical_segment_mapping_customer" alt="" coords="2191,3969,2631,4121">
+<area shape="rect" id="node30" href="tables/client_vertical_segment_mapping_employee.html" title="client_vertical_segment_mapping_employee" alt="" coords="2763,3995,3207,4147">
+<area shape="rect" id="node31" href="tables/client_vertical_segment_mapping_products.html" title="client_vertical_segment_mapping_products" alt="" coords="2767,977,3203,1129">
+<area shape="rect" id="node73" href="tables/product_master.html" title="product_master" alt="" coords="2286,865,2537,1041">
+<area shape="rect" id="node32" href="tables/crm_addressmaster.html" title="crm_addressmaster" alt="" coords="763,6399,988,6575">
+<area shape="rect" id="node33" href="tables/crm_childrenmaster.html" title="crm_childrenmaster" alt="" coords="2871,6229,3099,6376">
+<area shape="rect" id="node34" href="tables/customer_attachments.html" title="customer_attachments" alt="" coords="2223,5175,2600,5321">
+<area shape="rect" id="node35" href="tables/customer_employee_product_mapping.html" title="customer_employee_product_mapping" alt="" coords="2789,633,3182,780">
+<area shape="rect" id="node36" href="tables/customer_employee_territory_mapping.html" title="customer_employee_territory_mapping" alt="" coords="2211,3463,2611,3609">
+<area shape="rect" id="node39" href="tables/customer_type.html" title="customer_type" alt="" coords="1343,4408,1656,4555">
+<area shape="rect" id="node38" href="tables/customer_master_reporting_to.html" title="customer_master_reporting_to" alt="" coords="2249,5339,2573,5491">
+<area shape="rect" id="node40" href="tables/cvs_customer_territory_mapping.html" title="cvs_customer_territory_mapping" alt="" coords="2241,3699,2582,3880">
+<area shape="rect" id="node41" href="tables/cvs_customer_territory_mapping_employees.html" title="cvs_customer_territory_mapping_employees" alt="" coords="2762,4419,3209,4571">
+<area shape="rect" id="node42" href="tables/cvs_customer_territory_mapping_products.html" title="cvs_customer_territory_mapping_products" alt="" coords="2771,1539,3200,1691">
+<area shape="rect" id="node44" href="tables/dispatch_details.html" title="dispatch_details" alt="" coords="4055,1252,4299,1428">
+<area shape="rect" id="node68" href="tables/order_master.html" title="order_master" alt="" coords="3671,3024,4009,3288">
+<area shape="rect" id="node46" href="tables/django_admin_log.html" title="django_admin_log" alt="" coords="2881,2976,3090,3152">
+<area shape="rect" id="node48" href="tables/employee_attendance.html" title="employee_attendance" alt="" coords="2796,6393,3175,6540">
+<area shape="rect" id="node49" href="tables/employee_leave_app.html" title="employee_leave_app" alt="" coords="2868,4915,3103,5091">
+<area shape="rect" id="node54" href="tables/leave_types.html" title="leave_types" alt="" coords="1361,4244,1638,4391">
+<area shape="rect" id="node50" href="tables/employee_relative.html" title="employee_relative" alt="" coords="2850,6557,3121,6704">
+<area shape="rect" id="node51" href="tables/events_meta.html" title="events_meta" alt="" coords="2832,2185,3139,2332">
+<area shape="rect" id="node52" href="tables/events_meta_beat.html" title="events_meta_beat" alt="" coords="3357,2223,3569,2375">
+<area shape="rect" id="node55" href="tables/lmt_codes.html" title="lmt_codes" alt="" coords="1423,3844,1576,3991">
+<area shape="rect" id="node56" href="tables/lmt_couponcode.html" title="lmt_couponcode" alt="" coords="3354,2936,3571,3259">
+<area shape="rect" id="node58" href="tables/lmt_couponcodetype.html" title="lmt_couponcodetype" alt="" coords="2867,3508,3103,3772">
+<area shape="rect" id="node57" href="tables/lmt_couponcode_details.html" title="lmt_couponcode_details" alt="" coords="3708,1907,3972,2083">
+<area shape="rect" id="node59" href="tables/lmt_scheme.html" title="lmt_scheme" alt="" coords="1788,3893,2019,4157">
+<area shape="rect" id="node60" href="tables/lmt_schemepointtypemaster.html" title="lmt_schemepointtypemaster" alt="" coords="1347,4044,1652,4191">
+<area shape="rect" id="node61" href="tables/lmt_schemeproductslab.html" title="lmt_schemeproductslab" alt="" coords="2854,1316,3117,1521">
+<area shape="rect" id="node62" href="tables/lmt_territoryassignment.html" title="lmt_territoryassignment" alt="" coords="2277,4501,2545,4736">
+<area shape="rect" id="node63" href="tables/lmt_uid_details.html" title="lmt_uid_details" alt="" coords="3347,611,3579,816">
+<area shape="rect" id="node66" href="tables/lmt_uidgeneration.html" title="lmt_uidgeneration" alt="" coords="2869,1780,3101,2132">
+<area shape="rect" id="node64" href="tables/lmt_uidconfigmaster.html" title="lmt_uidconfigmaster" alt="" coords="2295,4139,2528,4315">
+<area shape="rect" id="node65" href="tables/lmt_uiddefinition.html" title="lmt_uiddefinition" alt="" coords="1803,2253,2004,2459">
+<area shape="rect" id="node67" href="tables/order_details.html" title="order_details" alt="" coords="4053,1961,4301,2137">
+<area shape="rect" id="node72" href="tables/product_images.html" title="product_images" alt="" coords="2828,469,3143,616">
+<area shape="rect" id="node76" href="tables/role_types.html" title="role_types" alt="" coords="1767,7500,2040,7617">
+<area shape="rect" id="node77" href="tables/sale_client_entry.html" title="sale_client_entry" alt="" coords="2841,5,3129,416">
+<area shape="rect" id="node78" href="tables/sale_entry.html" title="sale_entry" alt="" coords="2872,5108,3099,5372">
+<area shape="rect" id="node79" href="tables/sale_entry_applicable_schemes.html" title="sale_entry_applicable_schemes" alt="" coords="3299,4641,3627,4793">
+<area shape="rect" id="node82" href="tables/territory_client_vertical_segment_mapping.html" title="territory_client_vertical_segment_mapping" alt="" coords="2195,3052,2628,3204">
+<area shape="rect" id="node83" href="tables/territory_client_vertical_segment_mapping_employees.html" title="territory_client_vertical_segment_mapping_employees" alt="" coords="2716,4200,3255,4352">
+<area shape="rect" id="node84" href="tables/territory_client_vertical_segment_mapping_products.html" title="territory_client_vertical_segment_mapping_products" alt="" coords="2725,1147,3246,1299">
+<area shape="rect" id="node85" href="tables/territory_level_master.html" title="territory_level_master" alt="" coords="1345,3316,1653,3463">
+<area shape="rect" id="node87" href="tables/territory_master_child_territories.html" title="territory_master_child_territories" alt="" coords="2237,3293,2585,3445">
+<area shape="rect" id="node88" href="tables/territory_master_cities.html" title="territory_master_cities" alt="" coords="2285,5616,2538,5768">
+<area shape="rect" id="node89" href="tables/territory_master_districts.html" title="territory_master_districts" alt="" coords="2272,4825,2551,4977">
+<area shape="rect" id="node90" href="tables/territory_master_pins.html" title="territory_master_pins" alt="" coords="2290,4332,2533,4484">
+<area shape="rect" id="node91" href="tables/territory_master_states.html" title="territory_master_states" alt="" coords="2281,5920,2542,6072">
+<area shape="rect" id="node92" href="tables/trident_preregistration.html" title="trident_preregistration" alt="" coords="2857,6885,3113,7208">
+</map>
+
+					<a name='diagram'><img id='compactDegreeImg' src='diagrams/summary/relationships.real.compact.png' usemap='#compactRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+																					<map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/auth_group.html" title="auth_group" alt="" coords="2331,3808,2492,3931">
+<area shape="rect" id="node2" href="tables/auth_group_permissions.html" title="auth_group_permissions" alt="" coords="2851,3907,3119,4059">
+<area shape="rect" id="node3" href="tables/auth_permission.html" title="auth_permission" alt="" coords="2313,3257,2510,3439">
+<area shape="rect" id="node47" href="tables/django_content_type.html" title="django_content_type" alt="" coords="1785,3613,2021,3765">
+<area shape="rect" id="node4" href="tables/authapi_otp.html" title="authapi_otp" alt="" coords="2897,9508,3074,9719">
+<area shape="rect" id="node18" href="tables/client_employee_master.html" title="client_employee_master" alt="" coords="2151,7720,2672,9163">
+<area shape="rect" id="node5" href="tables/authtoken_token.html" title="authtoken_token" alt="" coords="2885,7788,3086,7940">
+<area shape="rect" id="node6" href="tables/beat_check_master.html" title="beat_check_master" alt="" coords="3349,5345,3576,5908">
+<area shape="rect" id="node8" href="tables/beat_master.html" title="beat_master" alt="" coords="2898,3496,3073,3853">
+<area shape="rect" id="node9" href="tables/beat_schedule.html" title="beat_schedule" alt="" coords="2281,3492,2542,3791">
+<area shape="rect" id="node37" href="tables/customer_master.html" title="customer_master" alt="" coords="1724,6691,2083,7781">
+<area shape="rect" id="node86" href="tables/territory_master.html" title="territory_master" alt="" coords="1775,4668,2032,5055">
+<area shape="rect" id="node7" href="tables/beat_details.html" title="beat_details" alt="" coords="3357,5088,3569,5328">
+<area shape="rect" id="node11" href="tables/beat_type.html" title="beat_type" alt="" coords="1424,2831,1575,3071">
+<area shape="rect" id="node26" href="tables/client_master.html" title="client_master" alt="" coords="1032,5057,1299,5737">
+<area shape="rect" id="node27" href="tables/client_vertical_segment_mapping.html" title="client_vertical_segment_mapping" alt="" coords="1729,3855,2077,4095">
+<area shape="rect" id="node10" href="tables/beat_schedule_client_employee.html" title="beat_schedule_client_employee" alt="" coords="2819,4561,3151,4713">
+<area shape="rect" id="node12" href="tables/city_master.html" title="city_master" alt="" coords="505,8015,719,8343">
+<area shape="rect" id="node45" href="tables/district_master.html" title="district_master" alt="" coords="276,7999,461,8180">
+<area shape="rect" id="node81" href="tables/state_master.html" title="state_master" alt="" coords="5,8249,232,8519">
+<area shape="rect" id="node13" href="tables/client_app_setting.html" title="client_app_setting" alt="" coords="1376,4793,1623,5151">
+<area shape="rect" id="node14" href="tables/client_contacts.html" title="client_contacts" alt="" coords="1343,5168,1656,5525">
+<area shape="rect" id="node15" href="tables/client_employee_attachments.html" title="client_employee_attachments" alt="" coords="2766,7957,3205,8256">
+<area shape="rect" id="node16" href="tables/client_employee_client_vertical_segment_mapping.html" title="client_employee_client_vertical_segment_mapping" alt="" coords="2734,5428,3237,5580">
+<area shape="rect" id="node17" href="tables/client_employee_location.html" title="client_employee_location" alt="" coords="1700,8235,2107,8475">
+<area shape="rect" id="node43" href="tables/designations.html" title="designations" alt="" coords="1760,8528,2047,8797">
+<area shape="rect" id="node53" href="tables/firm_type.html" title="firm_type" alt="" coords="1367,7644,1632,7884">
+<area shape="rect" id="node70" href="tables/pin_master.html" title="pin_master" alt="" coords="771,7500,980,7857">
+<area shape="rect" id="node19" href="tables/client_employee_master_groups.html" title="client_employee_master_groups" alt="" coords="2817,4731,3154,4883">
+<area shape="rect" id="node20" href="tables/client_employee_master_reporting_employees.html" title="client_employee_master_reporting_employees" alt="" coords="2753,8273,3217,8425">
+<area shape="rect" id="node21" href="tables/client_employee_master_user_permissions.html" title="client_employee_master_user_permissions" alt="" coords="2770,4076,3201,4228">
+<area shape="rect" id="node22" href="tables/client_employee_permissions_mapping.html" title="client_employee_permissions_mapping" alt="" coords="2786,10287,3185,10439">
+<area shape="rect" id="node69" href="tables/permissions.html" title="permissions" alt="" coords="1817,10432,1990,10555">
+<area shape="rect" id="node23" href="tables/client_employee_reporting.html" title="client_employee_reporting" alt="" coords="2805,7445,3166,7627">
+<area shape="rect" id="node74" href="tables/reporting_type.html" title="reporting_type" alt="" coords="2255,7264,2568,7533">
+<area shape="rect" id="node24" href="tables/client_employee_role_mapping.html" title="client_employee_role_mapping" alt="" coords="2823,10456,3147,10608">
+<area shape="rect" id="node75" href="tables/role.html" title="role" alt="" coords="2333,10491,2490,10731">
+<area shape="rect" id="node25" href="tables/client_employee_territory_mapping.html" title="client_employee_territory_mapping" alt="" coords="2802,6285,3169,6437">
+<area shape="rect" id="node80" href="tables/segment_master.html" title="segment_master" alt="" coords="1368,3501,1631,3800">
+<area shape="rect" id="node93" href="tables/vertical_master.html" title="vertical_master" alt="" coords="1373,4148,1626,4417">
+<area shape="rect" id="node28" href="tables/client_vertical_segment_mapping_category.html" title="client_vertical_segment_mapping_category" alt="" coords="2193,2867,2629,3019">
+<area shape="rect" id="node71" href="tables/product_category.html" title="product_category" alt="" coords="1733,1176,2073,1533">
+<area shape="rect" id="node29" href="tables/client_vertical_segment_mapping_customer.html" title="client_vertical_segment_mapping_customer" alt="" coords="2191,5051,2631,5203">
+<area shape="rect" id="node30" href="tables/client_vertical_segment_mapping_employee.html" title="client_vertical_segment_mapping_employee" alt="" coords="2763,5597,3207,5749">
+<area shape="rect" id="node31" href="tables/client_vertical_segment_mapping_products.html" title="client_vertical_segment_mapping_products" alt="" coords="2767,1492,3203,1644">
+<area shape="rect" id="node73" href="tables/product_master.html" title="product_master" alt="" coords="2286,1380,2537,2060">
+<area shape="rect" id="node32" href="tables/crm_addressmaster.html" title="crm_addressmaster" alt="" coords="763,8763,988,9091">
+<area shape="rect" id="node33" href="tables/crm_childrenmaster.html" title="crm_childrenmaster" alt="" coords="2871,8443,3099,8653">
+<area shape="rect" id="node34" href="tables/customer_attachments.html" title="customer_attachments" alt="" coords="2223,6531,2600,6800">
+<area shape="rect" id="node35" href="tables/customer_employee_product_mapping.html" title="customer_employee_product_mapping" alt="" coords="2789,1143,3182,1295">
+<area shape="rect" id="node36" href="tables/customer_employee_territory_mapping.html" title="customer_employee_territory_mapping" alt="" coords="2211,4539,2611,4691">
+<area shape="rect" id="node39" href="tables/customer_type.html" title="customer_type" alt="" coords="1343,6459,1656,6728">
+<area shape="rect" id="node38" href="tables/customer_master_reporting_to.html" title="customer_master_reporting_to" alt="" coords="2249,6817,2573,6969">
+<area shape="rect" id="node40" href="tables/cvs_customer_territory_mapping.html" title="cvs_customer_territory_mapping" alt="" coords="2241,4780,2582,4961">
+<area shape="rect" id="node41" href="tables/cvs_customer_territory_mapping_employees.html" title="cvs_customer_territory_mapping_employees" alt="" coords="2762,6008,3209,6160">
+<area shape="rect" id="node42" href="tables/cvs_customer_territory_mapping_products.html" title="cvs_customer_territory_mapping_products" alt="" coords="2771,2205,3200,2357">
+<area shape="rect" id="node44" href="tables/dispatch_details.html" title="dispatch_details" alt="" coords="4055,1612,4299,1911">
+<area shape="rect" id="node68" href="tables/order_master.html" title="order_master" alt="" coords="3671,3393,4009,3927">
+<area shape="rect" id="node46" href="tables/django_admin_log.html" title="django_admin_log" alt="" coords="2881,4245,3090,4544">
+<area shape="rect" id="node48" href="tables/employee_attendance.html" title="employee_attendance" alt="" coords="2796,8671,3175,9233">
+<area shape="rect" id="node49" href="tables/employee_leave_app.html" title="employee_leave_app" alt="" coords="2868,6491,3103,6848">
+<area shape="rect" id="node54" href="tables/leave_types.html" title="leave_types" alt="" coords="1361,6071,1638,6369">
+<area shape="rect" id="node50" href="tables/employee_relative.html" title="employee_relative" alt="" coords="2850,9251,3121,9491">
+<area shape="rect" id="node51" href="tables/events_meta.html" title="events_meta" alt="" coords="2832,2975,3139,3479">
+<area shape="rect" id="node52" href="tables/events_meta_beat.html" title="events_meta_beat" alt="" coords="3357,3191,3569,3343">
+<area shape="rect" id="node55" href="tables/lmt_codes.html" title="lmt_codes" alt="" coords="1423,5543,1576,5724">
+<area shape="rect" id="node56" href="tables/lmt_couponcode.html" title="lmt_couponcode" alt="" coords="3354,3841,3571,4345">
+<area shape="rect" id="node58" href="tables/lmt_couponcodetype.html" title="lmt_couponcodetype" alt="" coords="2867,4900,3103,5375">
+<area shape="rect" id="node57" href="tables/lmt_couponcode_details.html" title="lmt_couponcode_details" alt="" coords="3708,2557,3972,2827">
+<area shape="rect" id="node59" href="tables/lmt_scheme.html" title="lmt_scheme" alt="" coords="1788,5073,2019,5871">
+<area shape="rect" id="node60" href="tables/lmt_schemepointtypemaster.html" title="lmt_schemepointtypemaster" alt="" coords="1347,5777,1652,6017">
+<area shape="rect" id="node61" href="tables/lmt_schemeproductslab.html" title="lmt_schemeproductslab" alt="" coords="2854,1831,3117,2188">
+<area shape="rect" id="node62" href="tables/lmt_territoryassignment.html" title="lmt_territoryassignment" alt="" coords="2277,5705,2545,6092">
+<area shape="rect" id="node63" href="tables/lmt_uid_details.html" title="lmt_uid_details" alt="" coords="3347,1032,3579,1331">
+<area shape="rect" id="node66" href="tables/lmt_uidgeneration.html" title="lmt_uidgeneration" alt="" coords="2869,2447,3101,2921">
+<area shape="rect" id="node64" href="tables/lmt_uidconfigmaster.html" title="lmt_uidconfigmaster" alt="" coords="2295,5220,2528,5519">
+<area shape="rect" id="node65" href="tables/lmt_uiddefinition.html" title="lmt_uiddefinition" alt="" coords="1803,3108,2004,3524">
+<area shape="rect" id="node67" href="tables/order_details.html" title="order_details" alt="" coords="4053,2377,4301,2676">
+<area shape="rect" id="node72" href="tables/product_images.html" title="product_images" alt="" coords="2828,827,3143,1125">
+<area shape="rect" id="node76" href="tables/role_types.html" title="role_types" alt="" coords="1767,10637,2040,10907">
+<area shape="rect" id="node77" href="tables/sale_client_entry.html" title="sale_client_entry" alt="" coords="2841,5,3129,773">
+<area shape="rect" id="node78" href="tables/sale_entry.html" title="sale_entry" alt="" coords="2872,6865,3099,7428">
+<area shape="rect" id="node79" href="tables/sale_entry_applicable_schemes.html" title="sale_entry_applicable_schemes" alt="" coords="3299,6217,3627,6369">
+<area shape="rect" id="node82" href="tables/territory_client_vertical_segment_mapping.html" title="territory_client_vertical_segment_mapping" alt="" coords="2195,4128,2628,4280">
+<area shape="rect" id="node83" href="tables/territory_client_vertical_segment_mapping_employees.html" title="territory_client_vertical_segment_mapping_employees" alt="" coords="2716,5803,3255,5955">
+<area shape="rect" id="node84" href="tables/territory_client_vertical_segment_mapping_products.html" title="territory_client_vertical_segment_mapping_products" alt="" coords="2725,1661,3246,1813">
+<area shape="rect" id="node85" href="tables/territory_level_master.html" title="territory_level_master" alt="" coords="1345,4471,1653,4740">
+<area shape="rect" id="node87" href="tables/territory_master_child_territories.html" title="territory_master_child_territories" alt="" coords="2237,4369,2585,4521">
+<area shape="rect" id="node88" href="tables/territory_master_cities.html" title="territory_master_cities" alt="" coords="2285,7095,2538,7247">
+<area shape="rect" id="node89" href="tables/territory_master_districts.html" title="territory_master_districts" alt="" coords="2272,6181,2551,6333">
+<area shape="rect" id="node90" href="tables/territory_master_pins.html" title="territory_master_pins" alt="" coords="2290,5536,2533,5688">
+<area shape="rect" id="node91" href="tables/territory_master_states.html" title="territory_master_states" alt="" coords="2281,7551,2542,7703">
+<area shape="rect" id="node92" href="tables/trident_preregistration.html" title="trident_preregistration" alt="" coords="2857,9736,3113,10269">
+</map>
+
+					<a name='diagram'><img id='largeDegreeImg' src='diagrams/summary/relationships.real.large.png' usemap='#largeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+		      </section>    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+<!-- SheetJS -->
+<script src="bower/js-xlsx/xlsx.full.min.js"></script>
+<!-- pdfmake -->
+<script src="bower/pdfmake/pdfmake.min.js"></script>
+<script src="bower/pdfmake/vfs_fonts.js"></script>
+<!-- SlimScroll -->
+<script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="bower/codemirror/codemirror.js"></script>
+<script src="bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="bower/admin-lte/dist/js/app.min.js"></script>
+<script src="relationships.js"></script>
+<script src="schemaSpy.js"></script>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>client_vertical_segment_mapping - imast Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>imast</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+			<li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>client_vertical_segment_mapping</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<div class="row">
+					<div id="button_group_one" class="col-md-3 col-sm-6"></div>
+					<div id="button_group_two" class="col-md-2 col-sm-4 pull-right text-right"></div>
+				</div>
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="client_vertical_segment_id">client_vertical_segment_id</span></td>
+				 <td>serial</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title='Automatically updated by the database'>√</td>
+				 <td>nextval(&#39;client_vertical_segment_mapping_client_vertical_segment_id_seq&#39;::regclass)</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="beat_master.cvs_id references client_vertical_segment_mapping.client_vertical_segment_id via c11a707b355e5f99625f6e0102eb0285">
+						<a href='beat_master.html'>beat_master</a><span class='relatedKey'>.cvs_id</span>
+					</td>
+					<td class="constraint detail">
+						c11a707b355e5f99625f6e0102eb0285 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="beat_schedule.cvs_id references client_vertical_segment_mapping.client_vertical_segment_id via e9239319375fad024a57d62f85764e3a">
+						<a href='beat_schedule.html'>beat_schedule</a><span class='relatedKey'>.cvs_id</span>
+					</td>
+					<td class="constraint detail">
+						e9239319375fad024a57d62f85764e3a <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="client_employee_client_vertical_segment_mapping.client_vertical_segment_id references client_vertical_segment_mapping.client_vertical_segment_id via f0918c5c939ffa305ab1e2dafd9f0c41">
+						<a href='client_employee_client_vertical_segment_mapping.html'>client_employee_client_vertical_segment_mapping</a><span class='relatedKey'>.client_vertical_segment_id</span>
+					</td>
+					<td class="constraint detail">
+						f0918c5c939ffa305ab1e2dafd9f0c41 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="client_vertical_segment_mapping_category.clientverticalsegmentmapping_id references client_vertical_segment_mapping.client_vertical_segment_id via D7205130ed12d513dc90d99c0a443aea">
+						<a href='client_vertical_segment_mapping_category.html'>client_vertical_segment_mapping_category</a><span class='relatedKey'>.clientverticalsegmentmapping_id</span>
+					</td>
+					<td class="constraint detail">
+						D7205130ed12d513dc90d99c0a443aea <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="client_vertical_segment_mapping_customer.clientverticalsegmentmapping_id references client_vertical_segment_mapping.client_vertical_segment_id via c287fbf33f17ea331061308b4b2258dc">
+						<a href='client_vertical_segment_mapping_customer.html'>client_vertical_segment_mapping_customer</a><span class='relatedKey'>.clientverticalsegmentmapping_id</span>
+					</td>
+					<td class="constraint detail">
+						c287fbf33f17ea331061308b4b2258dc <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="client_vertical_segment_mapping_employee.clientverticalsegmentmapping_id references client_vertical_segment_mapping.client_vertical_segment_id via D617ff127654b9b3045d0ab033071dbe">
+						<a href='client_vertical_segment_mapping_employee.html'>client_vertical_segment_mapping_employee</a><span class='relatedKey'>.clientverticalsegmentmapping_id</span>
+					</td>
+					<td class="constraint detail">
+						D617ff127654b9b3045d0ab033071dbe <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="client_vertical_segment_mapping_products.clientverticalsegmentmapping_id references client_vertical_segment_mapping.client_vertical_segment_id via D95851009341aa460f87cf42cd2e33da">
+						<a href='client_vertical_segment_mapping_products.html'>client_vertical_segment_mapping_products</a><span class='relatedKey'>.clientverticalsegmentmapping_id</span>
+					</td>
+					<td class="constraint detail">
+						D95851009341aa460f87cf42cd2e33da <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="cvs_customer_territory_mapping.cvs_id references client_vertical_segment_mapping.client_vertical_segment_id via d7c3cd4c50e63d66d4d0a80c8702eff0">
+						<a href='cvs_customer_territory_mapping.html'>cvs_customer_territory_mapping</a><span class='relatedKey'>.cvs_id</span>
+					</td>
+					<td class="constraint detail">
+						d7c3cd4c50e63d66d4d0a80c8702eff0 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="territory_client_vertical_segment_mapping.cvs_id references client_vertical_segment_mapping.client_vertical_segment_id via D1f0d37be39a9fbe7b7e3e73745bf3e0">
+						<a href='territory_client_vertical_segment_mapping.html'>territory_client_vertical_segment_mapping</a><span class='relatedKey'>.cvs_id</span>
+					</td>
+					<td class="constraint detail">
+						D1f0d37be39a9fbe7b7e3e73745bf3e0 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="vertical_name">vertical_name</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="segment_name">segment_name</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="client_id">client_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="client_vertical_segment_mapping.client_id references client_master.client_id via client_vertical_s_client_id_8e07c9e5_fk_client_master_client_id">
+						<a href='client_master.html'>client_master</a><span class='relatedKey'>.client_id</span>
+					</td>
+					<td class="constraint detail">
+						client_vertical_s_client_id_8e07c9e5_fk_client_master_client_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="segment_id">segment_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="client_vertical_segment_mapping.segment_id references segment_master.segment_id via client_vertica_segment_id_b3456820_fk_segment_master_segment_id">
+						<a href='segment_master.html'>segment_master</a><span class='relatedKey'>.segment_id</span>
+					</td>
+					<td class="constraint detail">
+						client_vertica_segment_id_b3456820_fk_segment_master_segment_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="vertical_id">vertical_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="client_vertical_segment_mapping.vertical_id references vertical_master.vertical_id via client_vert_vertical_id_ae726a6e_fk_vertical_master_vertical_id">
+						<a href='vertical_master.html'>vertical_master</a><span class='relatedKey'>.vertical_id</span>
+					</td>
+					<td class="constraint detail">
+						client_vert_vertical_id_ae726a6e_fk_vertical_master_vertical_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='6 columns'>Table contained <span id="recordNumber">4</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> client_vertical_segment_mapping_pkey</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>client_vertical_segment_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>client_vertical_segment_mapping_2bfe9d72</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>client_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>client_vertical_segment_mapping_3e8e3332</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>segment_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>client_vertical_segment_mapping_973137c5</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>vertical_id</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="beat_master.html" title="beat_master" alt="" coords="967,199,1141,433">
+<area shape="rect" id="node2" href="client_master.html" title="client_master" alt="" coords="5,257,272,521">
+<area shape="rect" id="node3" href="client_vertical_segment_mapping.html" title="client_vertical_segment_mapping" alt="" coords="316,732,759,977">
+<area shape="rect" id="node6" href="segment_master.html" title="segment_master" alt="" coords="7,799,270,916">
+<area shape="rect" id="node7" href="vertical_master.html" title="vertical_master" alt="" coords="12,933,265,1051">
+<area shape="rect" id="node4" href="beat_schedule.html" title="beat_schedule" alt="" coords="923,5,1185,181">
+<area shape="rect" id="node5" href="client_employee_client_vertical_segment_mapping.html" title="client_employee_client_vertical_segment_mapping" alt="" coords="803,1496,1305,1648">
+<area shape="rect" id="node8" href="client_vertical_segment_mapping_category.html" title="client_vertical_segment_mapping_category" alt="" coords="836,451,1272,603">
+<area shape="rect" id="node9" href="client_vertical_segment_mapping_customer.html" title="client_vertical_segment_mapping_customer" alt="" coords="834,620,1274,772">
+<area shape="rect" id="node10" href="client_vertical_segment_mapping_employee.html" title="client_vertical_segment_mapping_employee" alt="" coords="832,789,1276,941">
+<area shape="rect" id="node11" href="client_vertical_segment_mapping_products.html" title="client_vertical_segment_mapping_products" alt="" coords="836,959,1272,1111">
+<area shape="rect" id="node12" href="cvs_customer_territory_mapping.html" title="cvs_customer_territory_mapping" alt="" coords="883,1128,1225,1309">
+<area shape="rect" id="node13" href="territory_client_vertical_segment_mapping.html" title="territory_client_vertical_segment_mapping" alt="" coords="837,1327,1271,1479">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/client_vertical_segment_mapping.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="beat_check_master.html" title="beat_check_master" alt="" coords="3009,1687,3225,1775">
+<area shape="rect" id="node2" href="beat_master.html" title="beat_master" alt="" coords="2627,470,2801,704">
+<area shape="rect" id="node3" href="customer_master.html" title="customer_master" alt="" coords="1612,2208,1815,2296">
+<area shape="rect" id="node4" href="client_employee_master.html" title="client_employee_master" alt="" coords="2074,1978,2323,2066">
+<area shape="rect" id="node5" href="beat_schedule.html" title="beat_schedule" alt="" coords="2068,1055,2329,1231">
+<area shape="rect" id="node6" href="territory_master.html" title="territory_master" alt="" coords="1617,1136,1810,1224">
+<area shape="rect" id="node8" href="beat_type.html" title="beat_type" alt="" coords="1639,123,1788,211">
+<area shape="rect" id="node9" href="client_master.html" title="client_master" alt="" coords="859,1275,1125,1539">
+<area shape="rect" id="node10" href="client_vertical_segment_mapping.html" title="client_vertical_segment_mapping" alt="" coords="1492,622,1935,867">
+<area shape="rect" id="node12" href="city_master.html" title="city_master" alt="" coords="449,2099,611,2187">
+<area shape="rect" id="node13" href="district_master.html" title="district_master" alt="" coords="220,2170,405,2258">
+<area shape="rect" id="node14" href="state_master.html" title="state_master" alt="" coords="5,2170,176,2258">
+<area shape="rect" id="node18" href="pin_master.html" title="pin_master" alt="" coords="655,2180,815,2268">
+<area shape="rect" id="node27" href="customer_type.html" title="customer_type" alt="" coords="1216,1032,1401,1120">
+<area shape="rect" id="node48" href="territory_level_master.html" title="territory_level_master" alt="" coords="1192,1174,1425,1262">
+<area shape="rect" id="node7" href="beat_details.html" title="beat_details" alt="" coords="3035,1275,3200,1363">
+<area shape="rect" id="node19" href="segment_master.html" title="segment_master" alt="" coords="1177,503,1440,620">
+<area shape="rect" id="node20" href="vertical_master.html" title="vertical_master" alt="" coords="1182,347,1435,464">
+<area shape="rect" id="node11" href="beat_schedule_client_employee.html" title="beat_schedule_client_employee" alt="" coords="2563,1695,2865,1783">
+<area shape="rect" id="node15" href="client_app_setting.html" title="client_app_setting" alt="" coords="1204,1423,1413,1511">
+<area shape="rect" id="node16" href="client_contacts.html" title="client_contacts" alt="" coords="1215,1528,1402,1616">
+<area shape="rect" id="node17" href="client_employee_client_vertical_segment_mapping.html" title="client_employee_client_vertical_segment_mapping" alt="" coords="2463,1526,2965,1678">
+<area shape="rect" id="node21" href="client_vertical_segment_mapping_category.html" title="client_vertical_segment_mapping_category" alt="" coords="1981,1248,2417,1400">
+<area shape="rect" id="node22" href="product_category.html" title="product_category" alt="" coords="1611,1315,1816,1403">
+<area shape="rect" id="node23" href="client_vertical_segment_mapping_customer.html" title="client_vertical_segment_mapping_customer" alt="" coords="1979,1418,2419,1570">
+<area shape="rect" id="node24" href="client_vertical_segment_mapping_employee.html" title="client_vertical_segment_mapping_employee" alt="" coords="2492,1143,2936,1295">
+<area shape="rect" id="node25" href="client_vertical_segment_mapping_products.html" title="client_vertical_segment_mapping_products" alt="" coords="2496,264,2932,416">
+<area shape="rect" id="node26" href="product_master.html" title="product_master" alt="" coords="2103,423,2295,511">
+<area shape="rect" id="node28" href="cvs_customer_territory_mapping.html" title="cvs_customer_territory_mapping" alt="" coords="2028,1587,2369,1768">
+<area shape="rect" id="node29" href="cvs_customer_territory_mapping_employees.html" title="cvs_customer_territory_mapping_employees" alt="" coords="2516,1800,2912,1888">
+<area shape="rect" id="node30" href="cvs_customer_territory_mapping_products.html" title="cvs_customer_territory_mapping_products" alt="" coords="2522,827,2906,915">
+<area shape="rect" id="node31" href="events_meta.html" title="events_meta" alt="" coords="2629,1038,2799,1126">
+<area shape="rect" id="node32" href="events_meta_beat.html" title="events_meta_beat" alt="" coords="3014,755,3221,843">
+<area shape="rect" id="node33" href="leave_types.html" title="leave_types" alt="" coords="1227,1634,1390,1722">
+<area shape="rect" id="node34" href="lmt_codes.html" title="lmt_codes" alt="" coords="1232,1739,1385,1827">
+<area shape="rect" id="node35" href="lmt_couponcode.html" title="lmt_couponcode" alt="" coords="3019,159,3216,247">
+<area shape="rect" id="node36" href="lmt_couponcodetype.html" title="lmt_couponcodetype" alt="" coords="2600,159,2828,247">
+<area shape="rect" id="node37" href="lmt_scheme.html" title="lmt_scheme" alt="" coords="1631,884,1796,972">
+<area shape="rect" id="node38" href="lmt_schemepointtypemaster.html" title="lmt_schemepointtypemaster" alt="" coords="1169,819,1448,907">
+<area shape="rect" id="node39" href="lmt_uidconfigmaster.html" title="lmt_uidconfigmaster" alt="" coords="2086,878,2311,966">
+<area shape="rect" id="node40" href="lmt_uiddefinition.html" title="lmt_uiddefinition" alt="" coords="1614,516,1813,604">
+<area shape="rect" id="node41" href="lmt_uidgeneration.html" title="lmt_uidgeneration" alt="" coords="2610,932,2818,1020">
+<area shape="rect" id="node42" href="order_master.html" title="order_master" alt="" coords="3269,2168,3444,2256">
+<area shape="rect" id="node43" href="sale_client_entry.html" title="sale_client_entry" alt="" coords="2615,1906,2813,1994">
+<area shape="rect" id="node44" href="sale_entry.html" title="sale_entry" alt="" coords="2630,2207,2798,2295">
+<area shape="rect" id="node45" href="territory_client_vertical_segment_mapping.html" title="territory_client_vertical_segment_mapping" alt="" coords="1982,672,2415,824">
+<area shape="rect" id="node46" href="territory_client_vertical_segment_mapping_employees.html" title="territory_client_vertical_segment_mapping_employees" alt="" coords="2483,1420,2945,1508">
+<area shape="rect" id="node47" href="territory_client_vertical_segment_mapping_products.html" title="territory_client_vertical_segment_mapping_products" alt="" coords="2489,722,2939,810">
+<area shape="rect" id="node49" href="trident_preregistration.html" title="trident_preregistration" alt="" coords="2595,2387,2833,2475">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/client_vertical_segment_mapping.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+<!-- SheetJS -->
+<script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+<!-- pdfmake -->
+<script src="../bower/pdfmake/pdfmake.min.js"></script>
+<script src="../bower/pdfmake/vfs_fonts.js"></script>
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

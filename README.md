@@ -12,7 +12,7 @@ https://schemaspy.readthedocs.io/en/latest/started.html#configuration
 
 https://schemaspy.readthedocs.io/en/latest/installation.html
 
-http://schemaspy.sourceforge.net/  to have extra oarameter to apply.
+http://schemaspy.sourceforge.net/  to have extra parameter to apply.
 
 Currently SchemaSpy has released 6.0.0 version and this is awesome. 
 
@@ -52,7 +52,7 @@ Final Step :
 
 Use command to generate schema related information : 
 
-`java -jar schemaspy-6.0.0.jar -t pgsql -db imast -host localhost -u username -p password -o ./schemaspy -dp postgresql-9.4.1212.jre6 -s public -noads`
+`java -jar schemaspy-6.0.0.jar -t pgsql -db imast -host localhost -u username -p password -o ./output -dp postgresql-9.4.1212.jre6 -s public -noads`
 
 Now you'll beatiful output from it.
 

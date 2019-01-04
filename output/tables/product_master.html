@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>product_master - imast Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>imast</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+			<li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>product_master</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<div class="row">
+					<div id="button_group_one" class="col-md-3 col-sm-6"></div>
+					<div id="button_group_two" class="col-md-2 col-sm-4 pull-right text-right"></div>
+				</div>
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="product_id">product_id</span></td>
+				 <td>serial</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title='Automatically updated by the database'>√</td>
+				 <td>nextval(&#39;product_master_product_id_seq&#39;::regclass)</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="client_vertical_segment_mapping_products.productmaster_id references product_master.product_id via client_v_productmaster_id_6684f12c_fk_product_master_product_id">
+						<a href='client_vertical_segment_mapping_products.html'>client_vertical_segment_mapping_products</a><span class='relatedKey'>.productmaster_id</span>
+					</td>
+					<td class="constraint detail">
+						client_v_productmaster_id_6684f12c_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="customer_employee_product_mapping.product_id references product_master.product_id via customer_emplo_product_id_02367d80_fk_product_master_product_id">
+						<a href='customer_employee_product_mapping.html'>customer_employee_product_mapping</a><span class='relatedKey'>.product_id</span>
+					</td>
+					<td class="constraint detail">
+						customer_emplo_product_id_02367d80_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="cvs_customer_territory_mapping_products.productmaster_id references product_master.product_id via cvs_cust_productmaster_id_5c7a7d5d_fk_product_master_product_id">
+						<a href='cvs_customer_territory_mapping_products.html'>cvs_customer_territory_mapping_products</a><span class='relatedKey'>.productmaster_id</span>
+					</td>
+					<td class="constraint detail">
+						cvs_cust_productmaster_id_5c7a7d5d_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="dispatch_details.product_id references product_master.product_id via dispatch_detai_product_id_fa143dd3_fk_product_master_product_id">
+						<a href='dispatch_details.html'>dispatch_details</a><span class='relatedKey'>.product_id</span>
+					</td>
+					<td class="constraint detail">
+						dispatch_detai_product_id_fa143dd3_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="lmt_couponcode.redeem_item_id references product_master.product_id via lmt_coupon_redeem_item_id_e0a053c5_fk_product_master_product_id">
+						<a href='lmt_couponcode.html'>lmt_couponcode</a><span class='relatedKey'>.redeem_item_id</span>
+					</td>
+					<td class="constraint detail">
+						lmt_coupon_redeem_item_id_e0a053c5_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="lmt_couponcode_details.product_id references product_master.product_id via lmt_couponcode_product_id_1b513fb3_fk_product_master_product_id">
+						<a href='lmt_couponcode_details.html'>lmt_couponcode_details</a><span class='relatedKey'>.product_id</span>
+					</td>
+					<td class="constraint detail">
+						lmt_couponcode_product_id_1b513fb3_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="lmt_schemeproductslab.product_id references product_master.product_id via lmt_schemeprod_product_id_e7be7fc4_fk_product_master_product_id">
+						<a href='lmt_schemeproductslab.html'>lmt_schemeproductslab</a><span class='relatedKey'>.product_id</span>
+					</td>
+					<td class="constraint detail">
+						lmt_schemeprod_product_id_e7be7fc4_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="lmt_uid_details.product_id_id references product_master.product_id via lmt_uid_det_product_id_id_683db5d6_fk_product_master_product_id">
+						<a href='lmt_uid_details.html'>lmt_uid_details</a><span class='relatedKey'>.product_id_id</span>
+					</td>
+					<td class="constraint detail">
+						lmt_uid_det_product_id_id_683db5d6_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="lmt_uidgeneration.product_id_id references product_master.product_id via lmt_uidgene_product_id_id_1952add9_fk_product_master_product_id">
+						<a href='lmt_uidgeneration.html'>lmt_uidgeneration</a><span class='relatedKey'>.product_id_id</span>
+					</td>
+					<td class="constraint detail">
+						lmt_uidgene_product_id_id_1952add9_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="order_details.product_id references product_master.product_id via order_details_product_id_a3b1bac1_fk_product_master_product_id">
+						<a href='order_details.html'>order_details</a><span class='relatedKey'>.product_id</span>
+					</td>
+					<td class="constraint detail">
+						order_details_product_id_a3b1bac1_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="product_images.product_id_id references product_master.product_id via product_ima_product_id_id_ccaefabd_fk_product_master_product_id">
+						<a href='product_images.html'>product_images</a><span class='relatedKey'>.product_id_id</span>
+					</td>
+					<td class="constraint detail">
+						product_ima_product_id_id_ccaefabd_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="sale_client_entry.product_id references product_master.product_id via sale_client_en_product_id_5a5995bd_fk_product_master_product_id">
+						<a href='sale_client_entry.html'>sale_client_entry</a><span class='relatedKey'>.product_id</span>
+					</td>
+					<td class="constraint detail">
+						sale_client_en_product_id_5a5995bd_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="territory_client_vertical_segment_mapping_products.productmaster_id references product_master.product_id via territor_productmaster_id_3bf58b51_fk_product_master_product_id">
+						<a href='territory_client_vertical_segment_mapping_products.html'>territory_client_vertical_segment_mapping_products</a><span class='relatedKey'>.productmaster_id</span>
+					</td>
+					<td class="constraint detail">
+						territor_productmaster_id_3bf58b51_fk_product_master_product_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="product_title">product_title</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="product_price">product_price</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="dealer_price">dealer_price</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="sale_price">sale_price</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="currency">currency</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="product_quantity">product_quantity</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="unit_of_quantity">unit_of_quantity</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="product_type">product_type</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="product_sku">product_sku</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="product_description">product_description</span></td>
+				 <td>text</td>
+				 <td>2147483647</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="product_status">product_status</span></td>
+				 <td>bool</td>
+				 <td>1</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="product_location">product_location</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="old_product_id">old_product_id</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="gross_weight">gross_weight</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="net_weight">net_weight</span></td>
+				 <td>varchar</td>
+				 <td>100</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="is_deleted">is_deleted</span></td>
+				 <td>bool</td>
+				 <td>1</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="product_added_date">product_added_date</span></td>
+				 <td>timestamptz</td>
+				 <td>35,6</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="product_updated_date">product_updated_date</span></td>
+				 <td>timestamptz</td>
+				 <td>35,6</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="client_id">client_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="product_master.client_id references client_master.client_id via product_master_client_id_9a672750_fk_client_master_client_id">
+						<a href='client_master.html'>client_master</a><span class='relatedKey'>.client_id</span>
+					</td>
+					<td class="constraint detail">
+						product_master_client_id_9a672750_fk_client_master_client_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="product_category_id">product_category_id</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="product_master.product_category_id references product_category.product_category_id via D2167520dd698d147021b05a7f221f3d">
+						<a href='product_category.html'>product_category</a><span class='relatedKey'>.product_category_id</span>
+					</td>
+					<td class="constraint detail">
+						D2167520dd698d147021b05a7f221f3d <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='21 columns'>Table contained <span id="recordNumber">2355</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> product_master_pkey</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>product_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>product_master_1d95dfdf</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>product_category_id</td>
+				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>product_master_2bfe9d72</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>client_id</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="client_vertical_segment_mapping_products.html" title="client_vertical_segment_mapping_products" alt="" coords="1164,884,1600,1036">
+<area shape="rect" id="node2" href="product_master.html" title="product_master" alt="" coords="700,1395,1077,2080">
+<area shape="rect" id="node7" href="client_master.html" title="client_master" alt="" coords="5,1955,272,2219">
+<area shape="rect" id="node10" href="product_category.html" title="product_category" alt="" coords="316,2173,656,2349">
+<area shape="rect" id="node3" href="customer_employee_product_mapping.html" title="customer_employee_product_mapping" alt="" coords="1185,1053,1579,1200">
+<area shape="rect" id="node4" href="cvs_customer_territory_mapping_products.html" title="cvs_customer_territory_mapping_products" alt="" coords="1167,1253,1597,1405">
+<area shape="rect" id="node5" href="dispatch_details.html" title="dispatch_details" alt="" coords="1260,1423,1504,1599">
+<area shape="rect" id="node6" href="lmt_couponcode.html" title="lmt_couponcode" alt="" coords="1273,5,1491,328">
+<area shape="rect" id="node8" href="lmt_couponcode_details.html" title="lmt_couponcode_details" alt="" coords="1687,548,1951,724">
+<area shape="rect" id="node9" href="lmt_schemeproductslab.html" title="lmt_schemeproductslab" alt="" coords="1251,2009,1513,2215">
+<area shape="rect" id="node11" href="lmt_uid_details.html" title="lmt_uid_details" alt="" coords="1703,1845,1935,2051">
+<area shape="rect" id="node12" href="lmt_uidgeneration.html" title="lmt_uidgeneration" alt="" coords="1266,345,1498,697">
+<area shape="rect" id="node13" href="order_details.html" title="order_details" alt="" coords="1258,1616,1506,1792">
+<area shape="rect" id="node14" href="product_images.html" title="product_images" alt="" coords="1225,1809,1539,1956">
+<area shape="rect" id="node15" href="sale_client_entry.html" title="sale_client_entry" alt="" coords="1238,2268,1526,2679">
+<area shape="rect" id="node16" href="territory_client_vertical_segment_mapping_products.html" title="territory_client_vertical_segment_mapping_products" alt="" coords="1121,715,1643,867">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/product_master.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="beat_master.html" title="beat_master" alt="" coords="2675,2528,2841,2616">
+<area shape="rect" id="node2" href="beat_type.html" title="beat_type" alt="" coords="2233,2379,2382,2467">
+<area shape="rect" id="node3" href="client_master.html" title="client_master" alt="" coords="1424,1351,1691,1615">
+<area shape="rect" id="node4" href="client_vertical_segment_mapping.html" title="client_vertical_segment_mapping" alt="" coords="2150,2096,2465,2184">
+<area shape="rect" id="node5" href="client_employee_master.html" title="client_employee_master" alt="" coords="1131,1007,1380,1095">
+<area shape="rect" id="node7" href="city_master.html" title="city_master" alt="" coords="449,1213,611,1301">
+<area shape="rect" id="node8" href="district_master.html" title="district_master" alt="" coords="220,1088,405,1176">
+<area shape="rect" id="node9" href="state_master.html" title="state_master" alt="" coords="5,1156,176,1244">
+<area shape="rect" id="node12" href="pin_master.html" title="pin_master" alt="" coords="667,1088,827,1176">
+<area shape="rect" id="node14" href="segment_master.html" title="segment_master" alt="" coords="1806,895,2003,983">
+<area shape="rect" id="node15" href="vertical_master.html" title="vertical_master" alt="" coords="1811,1036,1999,1124">
+<area shape="rect" id="node13" href="customer_master.html" title="customer_master" alt="" coords="884,1321,1087,1409">
+<area shape="rect" id="node6" href="beat_schedule.html" title="beat_schedule" alt="" coords="2667,1571,2849,1659">
+<area shape="rect" id="node10" href="client_app_setting.html" title="client_app_setting" alt="" coords="1800,2273,2009,2361">
+<area shape="rect" id="node11" href="client_contacts.html" title="client_contacts" alt="" coords="1811,2379,1998,2467">
+<area shape="rect" id="node21" href="customer_type.html" title="customer_type" alt="" coords="655,1193,840,1281">
+<area shape="rect" id="node16" href="client_vertical_segment_mapping_category.html" title="client_vertical_segment_mapping_category" alt="" coords="2566,2317,2950,2405">
+<area shape="rect" id="node17" href="product_category.html" title="product_category" alt="" coords="1735,2008,2075,2184">
+<area shape="rect" id="node18" href="client_vertical_segment_mapping_products.html" title="client_vertical_segment_mapping_products" alt="" coords="2540,2043,2976,2195">
+<area shape="rect" id="node19" href="product_master.html" title="product_master" alt="" coords="2119,1285,2496,1971">
+<area shape="rect" id="node20" href="customer_employee_product_mapping.html" title="customer_employee_product_mapping" alt="" coords="2561,1243,2955,1389">
+<area shape="rect" id="node22" href="cvs_customer_territory_mapping.html" title="cvs_customer_territory_mapping" alt="" coords="2601,2423,2915,2511">
+<area shape="rect" id="node23" href="territory_master.html" title="territory_master" alt="" coords="2211,2201,2404,2289">
+<area shape="rect" id="node45" href="territory_level_master.html" title="territory_level_master" alt="" coords="1788,1867,2021,1955">
+<area shape="rect" id="node24" href="cvs_customer_territory_mapping_products.html" title="cvs_customer_territory_mapping_products" alt="" coords="3066,2216,3495,2368">
+<area shape="rect" id="node25" href="dispatch_details.html" title="dispatch_details" alt="" coords="2636,451,2880,627">
+<area shape="rect" id="node26" href="order_master.html" title="order_master" alt="" coords="1817,753,1992,841">
+<area shape="rect" id="node27" href="leave_types.html" title="leave_types" alt="" coords="1823,1427,1986,1515">
+<area shape="rect" id="node28" href="lmt_codes.html" title="lmt_codes" alt="" coords="1828,1532,1981,1620">
+<area shape="rect" id="node29" href="lmt_couponcode.html" title="lmt_couponcode" alt="" coords="2649,5,2867,328">
+<area shape="rect" id="node30" href="lmt_couponcodetype.html" title="lmt_couponcodetype" alt="" coords="2193,501,2421,589">
+<area shape="rect" id="node31" href="lmt_couponcode_details.html" title="lmt_couponcode_details" alt="" coords="3149,543,3413,719">
+<area shape="rect" id="node32" href="lmt_scheme.html" title="lmt_scheme" alt="" coords="2225,1144,2390,1232">
+<area shape="rect" id="node33" href="lmt_schemepointtypemaster.html" title="lmt_schemepointtypemaster" alt="" coords="1765,1249,2044,1337">
+<area shape="rect" id="node34" href="lmt_schemeproductslab.html" title="lmt_schemeproductslab" alt="" coords="2627,1748,2889,1953">
+<area shape="rect" id="node35" href="lmt_uid_details.html" title="lmt_uid_details" alt="" coords="3165,1577,3397,1783">
+<area shape="rect" id="node36" href="lmt_uidgeneration.html" title="lmt_uidgeneration" alt="" coords="2642,837,2874,1189">
+<area shape="rect" id="node38" href="lmt_uiddefinition.html" title="lmt_uiddefinition" alt="" coords="2208,931,2407,1019">
+<area shape="rect" id="node37" href="lmt_uidconfigmaster.html" title="lmt_uidconfigmaster" alt="" coords="2645,345,2871,433">
+<area shape="rect" id="node39" href="order_details.html" title="order_details" alt="" coords="2634,644,2882,820">
+<area shape="rect" id="node40" href="product_images.html" title="product_images" alt="" coords="2601,1407,2915,1553">
+<area shape="rect" id="node41" href="sale_client_entry.html" title="sale_client_entry" alt="" coords="2614,2633,2902,3044">
+<area shape="rect" id="node42" href="sale_entry.html" title="sale_entry" alt="" coords="1821,2592,1989,2680">
+<area shape="rect" id="node43" href="territory_client_vertical_segment_mapping.html" title="territory_client_vertical_segment_mapping" alt="" coords="2568,2212,2948,2300">
+<area shape="rect" id="node44" href="territory_client_vertical_segment_mapping_products.html" title="territory_client_vertical_segment_mapping_products" alt="" coords="3020,2027,3541,2179">
+<area shape="rect" id="node46" href="trident_preregistration.html" title="trident_preregistration" alt="" coords="1785,372,2024,460">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/product_master.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+<!-- SheetJS -->
+<script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+<!-- pdfmake -->
+<script src="../bower/pdfmake/pdfmake.min.js"></script>
+<script src="../bower/pdfmake/vfs_fonts.js"></script>
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>

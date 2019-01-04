@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>imast Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="bower/html5shiv/html5shiv.min.js"></script>
+  <script src="bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand"><b>imast</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+			<li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+			<li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>Tables</h1></br>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="callout callout-info">
+					<h4>SchemaSpy Analysis of imast</h4>
+					<p>Generated on Fri Jan 04 16:06 IST 2019</p>
+				</div>
+			</div>
+		</div>
+
+
+        <a href="imast.public.xml" title="XML Representation">XML Representation</a></br>
+		<a href="insertionOrder.txt" title="Useful for loading data into a database">Insertion Order</a>
+        <a href="deletionOrder.txt" title="Useful for purging data from a database">Deletion Order</a>	
+      </section>
+      <!-- Main content -->
+      <section class="content">
+		  <div class="row">
+			<div class="col-md-2 col-sm-4 col-xs-12">
+			  <div class="info-box">
+				  <span class="info-box-icon bg-aqua"><i class="fa fa-table"></i></span>
+				  <div class="info-box-content">
+					  <span class="info-box-text">TABLES</span>
+					  <span class="info-box-number">95</span>
+				  </div>
+				  <!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+			</div>
+			<!-- /.col -->
+			<div class="col-md-2 col-sm-4 col-xs-12">
+			  <div class="info-box">
+				  <span class="info-box-icon bg-teal"><i class="fa fa-table"></i></span>
+				  <div class="info-box-content">
+					  <span class="info-box-text">VIEWS</span>
+					  <span class="info-box-number">0</span>
+				  </div>
+				  <!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+			</div>
+			<!-- /.col -->
+
+			<div class="col-md-2 col-sm-4 col-xs-12">
+			  <div class="info-box">
+				  <span class="info-box-icon bg-green"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></span>
+
+				  <div class="info-box-content">
+					  <span class="info-box-text">COLUMNS</span>
+					  <span class="info-box-number">758</span>
+				  </div>
+				  <!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+			</div>
+		  <!-- /.col -->
+			<div class="col-md-2 col-sm-4 col-xs-12">
+			  <div class="info-box">
+				  <span class="info-box-icon bg-yellow"><i class="ion ion-key"></i></span>
+
+				  <div class="info-box-content">
+					  <span class="info-box-text">Constraints</span>
+					  <span class="info-box-number">216</span>
+				  </div>
+				  <!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+			</div>
+			<!-- /.col -->
+			<div class="col-md-2 col-sm-4 col-xs-12">
+			  <div class="info-box">
+				  <span class="info-box-icon bg-red-active"><i class="fa fa-question" aria-hidden="true"></i></span>
+
+				  <div class="info-box-content">
+					  <span class="info-box-text">Anomalies</span>
+					  <span class="info-box-number">0</span>
+				  </div>
+				  <!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+			</div>
+		  	<!-- /.col -->
+			<div class="col-md-2 col-sm-4 col-xs-12">
+				<div class="info-box">
+					<span class="info-box-icon bg-navy"><i class="fa fa-file-code-o" aria-hidden="true"></i></span>
+
+					<div class="info-box-content">
+						<span class="info-box-text">Routines</span>
+						<span class="info-box-number">0</span>
+					</div>
+					<!-- /.info-box-content -->
+				</div>
+				<!-- /.info-box -->
+			</div>
+			<!-- /.col -->
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+			  <h3 class="box-title">Database Properties</h3>
+			  <span class="label label-primary pull-right"><i class="fa fa-cog fa-2x"></i></span>			  
+			</div><!-- /.box-header -->
+			<div class="box-body">
+			  <p>Database Type: PostgreSQL - 9.5.14</p>			  
+			</div><!-- /.box-body -->
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+			  <h3 class="box-title">Schema public</h3>
+			  <span class="label label-primary pull-right"><i class="fa fa-cog fa-2x"></i></span>			  
+			</div><!-- /.box-header -->
+			<div class="box-body">
+			  <p> <p>standard public schema</p> </p>			  
+			</div><!-- /.box-body -->
+		</div>
+		<div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tables</h3>			  
+			  <span class="label label-primary pull-right"><i class="fa fa-database fa-2x"></i></span>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+			<div class="row">
+				<div id="button_group_one" class="col-md-3 col-sm-6"></div>
+				<div id="button_group_two" class="col-md-2 col-sm-4 pull-right text-right"></div>
+			</div>
+            <table id="database_objects" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+					<tr>
+					  <th valign="bottom">Table / View</th>
+					  <th align="right" valign="bottom">Children</th>
+					  <th align="right" valign="bottom">Parents</th>
+					  <th align="right" valign="bottom">Columns</th>
+					  <th align="right" valign="bottom">Rows</th>
+					  <th align="right" valign="bottom">Type</th>
+					  <th class="toggle">Comments</th>
+					</tr>
+				</thead>
+				<tbody>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_master.html">client_master</a></td>
+				  <td class="detail" align="right">26</td>
+				  <td class="detail" align="right">5</td>
+				  <td class="detail" align="right">21</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/events_meta.html">events_meta</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">15</td>
+				  <td class="detail" align="right">164</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/territory_master_states.html">territory_master_states</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">26</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/permissions.html">permissions</a></td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_couponcodetype.html">lmt_couponcodetype</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">5</td>
+				  <td class="detail" align="right">14</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/territory_level_master.html">territory_level_master</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">7</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_app_setting.html">client_app_setting</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">10</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/employee_attendance.html">employee_attendance</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">17</td>
+				  <td class="detail" align="right">166</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/events_meta_beat.html">events_meta_beat</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">160</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/authtoken_token.html">authtoken_token</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">770</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/employee_relative.html">employee_relative</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">167</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/product_images.html">product_images</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/trident_preregistration.html">trident_preregistration</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">5</td>
+				  <td class="detail" align="right">16</td>
+				  <td class="detail" align="right">26</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/state_master.html">state_master</a></td>
+				  <td class="detail" align="right">11</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">7</td>
+				  <td class="detail" align="right">36</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/territory_client_vertical_segment_mapping.html">territory_client_vertical_segment_mapping</a></td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">21</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/employee_leave_app.html">employee_leave_app</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">10</td>
+				  <td class="detail" align="right">9</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/customer_employee_territory_mapping.html">customer_employee_territory_mapping</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/order_details.html">order_details</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">61</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/customer_master_reporting_to.html">customer_master_reporting_to</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">2943</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_client_vertical_segment_mapping.html">client_employee_client_vertical_segment_mapping</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/leave_types.html">leave_types</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/reporting_type.html">reporting_type</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">7</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_reporting.html">client_employee_reporting</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/crm_addressmaster.html">crm_addressmaster</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">9</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_uidconfigmaster.html">lmt_uidconfigmaster</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">16</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_master_groups.html">client_employee_master_groups</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">18</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_vertical_segment_mapping_category.html">client_vertical_segment_mapping_category</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">548</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/beat_master.html">beat_master</a></td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">10</td>
+				  <td class="detail" align="right">48</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/dispatch_details.html">dispatch_details</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">46</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/role_types.html">role_types</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">7</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/order_master.html">order_master</a></td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">16</td>
+				  <td class="detail" align="right">47</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/auth_group.html">auth_group</a></td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/beat_details.html">beat_details</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">853</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/django_content_type.html">django_content_type</a></td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">78</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/beat_type.html">beat_type</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_role_mapping.html">client_employee_role_mapping</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/django_session.html">django_session</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">983</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_territoryassignment.html">lmt_territoryassignment</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">11</td>
+				  <td class="detail" align="right">1696</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/cvs_customer_territory_mapping_products.html">cvs_customer_territory_mapping_products</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">247612</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/city_master.html">city_master</a></td>
+				  <td class="detail" align="right">9</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">9</td>
+				  <td class="detail" align="right">5729</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/territory_master_child_territories.html">territory_master_child_territories</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/designations.html">designations</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">7</td>
+				  <td class="detail" align="right">14</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_codes.html">lmt_codes</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">183</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_schemepointtypemaster.html">lmt_schemepointtypemaster</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/vertical_master.html">vertical_master</a></td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">7</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/beat_schedule_client_employee.html">beat_schedule_client_employee</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">13</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_master_user_permissions.html">client_employee_master_user_permissions</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/territory_master_districts.html">territory_master_districts</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">561</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_master.html">client_employee_master</a></td>
+				  <td class="detail" align="right">39</td>
+				  <td class="detail" align="right">13</td>
+				  <td class="detail" align="right">47</td>
+				  <td class="detail" align="right">3113</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/territory_client_vertical_segment_mapping_employees.html">territory_client_vertical_segment_mapping_employees</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">650</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_vertical_segment_mapping_products.html">client_vertical_segment_mapping_products</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">1418</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/customer_master.html">customer_master</a></td>
+				  <td class="detail" align="right">15</td>
+				  <td class="detail" align="right">14</td>
+				  <td class="detail" align="right">35</td>
+				  <td class="detail" align="right">3817</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_uiddefinition.html">lmt_uiddefinition</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">12</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_uid_details.html">lmt_uid_details</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">18</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/customer_attachments.html">customer_attachments</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">7</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_contacts.html">client_contacts</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">10</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/beat_schedule.html">beat_schedule</a></td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">11</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/cvs_customer_territory_mapping.html">cvs_customer_territory_mapping</a></td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">644</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/product_master.html">product_master</a></td>
+				  <td class="detail" align="right">13</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">21</td>
+				  <td class="detail" align="right">2355</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/beat_check_master.html">beat_check_master</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">5</td>
+				  <td class="detail" align="right">17</td>
+				  <td class="detail" align="right">1521</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/customer_type.html">customer_type</a></td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">7</td>
+				  <td class="detail" align="right">11</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_master_reporting_employees.html">client_employee_master_reporting_employees</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">14</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/django_admin_log.html">django_admin_log</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">169946</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/cvs_customer_territory_mapping_employees.html">cvs_customer_territory_mapping_employees</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">33671</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/pin_master.html">pin_master</a></td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">10</td>
+				  <td class="detail" align="right">5484</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/role.html">role</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/segment_master.html">segment_master</a></td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_location.html">client_employee_location</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">22</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_territory_mapping.html">client_employee_territory_mapping</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_scheme.html">lmt_scheme</a></td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">5</td>
+				  <td class="detail" align="right">25</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_uidgeneration.html">lmt_uidgeneration</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">14</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/django_migrations.html">django_migrations</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">120</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_schemeproductslab.html">lmt_schemeproductslab</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">10</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/territory_master_cities.html">territory_master_cities</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">5555</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_attachments.html">client_employee_attachments</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">8</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_vertical_segment_mapping_customer.html">client_vertical_segment_mapping_customer</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">602</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_vertical_segment_mapping.html">client_vertical_segment_mapping</a></td>
+				  <td class="detail" align="right">9</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/territory_master.html">territory_master</a></td>
+				  <td class="detail" align="right">13</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">11</td>
+				  <td class="detail" align="right">21</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_employee_permissions_mapping.html">client_employee_permissions_mapping</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/district_master.html">district_master</a></td>
+				  <td class="detail" align="right">9</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">640</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/firm_type.html">firm_type</a></td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">6</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/client_vertical_segment_mapping_employee.html">client_vertical_segment_mapping_employee</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">85</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_couponcode.html">lmt_couponcode</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">7</td>
+				  <td class="detail" align="right">15</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/sale_entry_applicable_schemes.html">sale_entry_applicable_schemes</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/auth_group_permissions.html">auth_group_permissions</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">231</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/sale_client_entry.html">sale_client_entry</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">9</td>
+				  <td class="detail" align="right">24</td>
+				  <td class="detail" align="right">104918</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/product_category.html">product_category</a></td>
+				  <td class="detail" align="right">10</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">10</td>
+				  <td class="detail" align="right">874</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/territory_master_pins.html">territory_master_pins</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">4643</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/authapi_otp.html">authapi_otp</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">5</td>
+				  <td class="detail" align="right">43</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/lmt_couponcode_details.html">lmt_couponcode_details</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">7</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/customer_employee_product_mapping.html">customer_employee_product_mapping</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/crm_childrenmaster.html">crm_childrenmaster</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">5</td>
+				  <td class="detail" align="right">171</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/auth_permission.html">auth_permission</a></td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">234</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/territory_client_vertical_segment_mapping_products.html">territory_client_vertical_segment_mapping_products</a></td>
+				  <td class="detail" align="right">0</td>
+				  <td class="detail" align="right">2</td>
+				  <td class="detail" align="right">3</td>
+				  <td class="detail" align="right">28360</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/sale_entry.html">sale_entry</a></td>
+				  <td class="detail" align="right">1</td>
+				  <td class="detail" align="right">4</td>
+				  <td class="detail" align="right">17</td>
+				  <td class="detail" align="right">15058</td>
+				  <td class="detail" align="right">Table</td>
+				  <td class="comment detail" style="display: table-cell;"></td>
+				  </tr>
+				  			</table>
+            </div>
+            <!-- /.box-body -->
+          </div>			
+      </section>
+      <!-- /.content -->
+	  <script>
+          var config = {
+	          pagination: true
+          }
+	  </script>    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+<!-- SheetJS -->
+<script src="bower/js-xlsx/xlsx.full.min.js"></script>
+<!-- pdfmake -->
+<script src="bower/pdfmake/pdfmake.min.js"></script>
+<script src="bower/pdfmake/vfs_fonts.js"></script>
+<!-- SlimScroll -->
+<script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="bower/codemirror/codemirror.js"></script>
+<script src="bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="bower/admin-lte/dist/js/app.min.js"></script>
+<script src="main.js"></script>
+<script src="schemaSpy.js"></script>
+</body>
+</html>
