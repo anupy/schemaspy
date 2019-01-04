@@ -64,4 +64,8 @@ database is exists with relational table then it will give you joy.
 I kept `postgresql-941212jre6.jar` and `schemaspy-6.0.0.jar` both jar files in repository, but if your database is different then
 instead of postgresql jar you need to find appropriate database jar file.
 
-I hope you people will like this. 
+I hope you people will like this.
+
+TODO :: Soon I'm planning to add Docker for the same.
+
+Please comment if anyone of you find issues handling in this, also same support is available at stack overflow too.
