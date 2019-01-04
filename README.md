@@ -19,6 +19,7 @@ Currently SchemaSpy has released 6.0.0 version and this is awesome.
 So what basically you will need to : 
 
 ## Step 1 : ##
+ Schema Spy actually needs to have graphviz installed. 
 
 `apt-get install graphviz`
 
@@ -45,9 +46,12 @@ Download latest version of Schema Spy at http://schemaspy.org/
 
 ##  Step 4 :  ## 
   
-  Set password to your database.
-  Now find appropriate JRE i.e. `postgresql-9.4.1212.jre6` and download. here https://jdbc.postgresql.org/download.html
-    
+  1) Set password to your database.
+  
+  2) Now find appropriate JRE i.e. `postgresql-9.4.1212.jre6` and download. here https://jdbc.postgresql.org/download.html
+  
+  This is actually a JAR file to use with any database connection for mysql this will be different, you need to do searching to find appropriate databases jar files.
+  
 ##  Final Step : ##
 
 Use command to generate schema related information : 
