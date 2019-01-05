@@ -70,6 +70,6 @@ instead of postgresql jar you need to find appropriate database jar file.
 
 I hope you people will like this.
 
-TODO :: Soon I'm planning to add Docker for the same.
+##### TODO :: Soon I'm planning to add Docker for the same. #####
 
 Please comment if anyone of you find issues handling in this, also same support is available at stack overflow too.
