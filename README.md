@@ -76,14 +76,14 @@ Please comment if anyone of you find issues handling in this, also same support 
 
 
 
-TODO :: My Future repositories would be for, sample of : 
+#### TODO :: My Future repositories would be for, sample of : ####
 
-Python
-Django
-Django Rest Framework
-Selenium
-Testing
-BeautifulSoap
-Scrapy
-Core Python setups
-CasperJS examples
+##### Python #####
+##### Django #####
+##### Django Rest Framework #####
+##### Selenium #####
+##### Testing #####
+##### BeautifulSoap #####
+##### Scrapy #####
+##### Core Python setups #####
+##### CasperJS examples #####
