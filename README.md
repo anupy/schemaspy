@@ -73,3 +73,17 @@ I hope you people will like this.
 ##### TODO :: Soon I'm planning to add Docker for the same. #####
 
 Please comment if anyone of you find issues handling in this, also same support is available at stack overflow too.
+
+
+
+TODO :: My Future repositories would be for, sample of : 
+
+Python
+Django
+Django Rest Framework
+Selenium
+Testing
+BeautifulSoap
+Scrapy
+Core Python setups
+CasperJS examples
